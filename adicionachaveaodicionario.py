@@ -6,6 +6,6 @@ DicionarioA = {
    
     }
 
-DicionarioA.update({4: 40})
+DicionarioA.update({4: 40}) # adiciona nova chave no dicionario
 
 print(DicionarioA)

@@ -1,4 +1,4 @@
-Lista = [7,2,3,14]
+Lista = [int(input("digite um numero: ")), 7, 2, 3, 14]
     
 print(max(Lista)) # resolução simples
 

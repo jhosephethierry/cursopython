@@ -10,10 +10,14 @@ def calcularpagamento(quantidadehoras, valorhora):
        horasexcedentes = horas - 40
        salario = 40 * taxa + (horasexcedentes * (1.5 * taxa))
     
-    print(salario)
-    
-    return(salario)
+    return salario
 
-calcularpagamento(120, 7)
-    
+horasstr = input("digite a quantidade de horas: ")
+taxastr = input("digite o valor da taxa: ")
+
+totalsalario = calcularpagamento(horasstr,taxastr)
+
+print("o valor dos seus rendimentos é R$", totalsalario)    
         
+
+    

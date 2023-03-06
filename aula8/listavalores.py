@@ -10,11 +10,13 @@ def listaintervalo(lista,limiteinferior,limitesuperior):
         
     return novalista
             
-listanumero = [10,20,30,40,50,60,70,80,90,100]
-
+listanumero = []
+        
+listanumero = [2,5,7,7,8,13,15,16,80]
+       
 listanumero.sort()
 
-listanovanumero = listaintervalo(listanumero,50,100)
+listanovanumero = listaintervalo(listanumero,7,40)
 
 print(listanovanumero)
 

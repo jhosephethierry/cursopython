@@ -4,7 +4,7 @@ def contaletras(palavra,letra): # define a função
     
     for l in palavra: # condição para
         
-        if l.lower() == letra.lower(): # .lower() transforma a letra em minúscula pra haver distinção
+        if l.lower() == letra.lower(): # .lower() transforma a letra em minúscula pra haver indistinção
             
             contador += 1 # incrementa o contador
             

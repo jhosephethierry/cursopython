@@ -1,8 +1,20 @@
-def listalimites():
+def listaintervalo(lista,limiteinferior,limitesuperior):
 
-    lista  = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-    limiteinferior = int(input("digite o limite inferior: "))
-    limitesuperior = int(input("digite o limite superior: "))
-    intervalo = limiteinferior[0::] and limitesuperior[::0]
+    novalista = []
+    
+    for n in lista:
+        
+        if n >= limiteinferior and n <= limitesuperior:
+            
+            novalista.append(n)
+        
+    return novalista
+            
+listanumero = [10,20,30,40,50,60,70,80,90,100]
 
-listalimites()
+listanumero.sort()
+
+listanovanumero = listaintervalo(listanumero,50,100)
+
+print(listanovanumero)
+

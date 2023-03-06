@@ -8,8 +8,8 @@ def contaletras(palavra,letra):
             
     return contador
 
-pal = input("digite uma palavra: ")
-let = input("digite uma letra da palavra digitada: ")
+pal = input("digite o texto: ")
+let = input("digite uma letra do texto digitada: ")
 
 contagem = contaletras(pal,let)
 

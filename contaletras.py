@@ -2,7 +2,7 @@ def contaletras(palavra,letra): # define a função
     
     contador = 0 # cria uma variável contador iniciando em zero
     
-    for l in palavra: # condição para
+    for l in palavra: # condição para palavra
         
         if l.lower() == letra.lower(): # .lower() transforma a letra em minúscula pra haver indistinção
             

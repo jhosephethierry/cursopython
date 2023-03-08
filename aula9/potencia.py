@@ -3,7 +3,8 @@ def potencia(base,expoente):
     resultado = 1
     
     for i in range(expoente):
-        resultado *= base
+        
+        resultado = resultado * base
    
     return resultado
 

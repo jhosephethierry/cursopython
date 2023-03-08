@@ -2,8 +2,9 @@ def imprimirdata(data):
     
     listadata = data.split("/")
     
-    
-    if int(listadata[0]) <= 0 or int(listadata[0]) > 31:
+    if listadata != 3:
+        print("digite uma data válida")
+    elif int(listadata[0]) <= 0 or int(listadata[0]) > 31:
         print("dia invalido")
     elif int(listadata[1]) <= 0 or int(listadata[1]) > 12:
         print("mes invalido")

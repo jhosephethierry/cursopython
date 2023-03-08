@@ -4,7 +4,7 @@ def e(b):
     
     return a
 
-a = 20
+a = 10
 
 e(a)
 e(a)

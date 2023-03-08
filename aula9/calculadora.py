@@ -12,8 +12,10 @@ def subtracao(numA,numB):
 
 def divisao(numA,numB):
     
-    divisao = numA / numB
-    
+    if numB == 0:
+        divisao = "não é possível dividir por 0"
+    else:
+        divisao = numA / numB
     return divisao
 
 def multiplicacao(numA,numB):

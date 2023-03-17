@@ -6,12 +6,14 @@ class Triangulo:
         self.ladob = LadoB
         self.ladoc = LadoC
 
-    def calcularPerimetro(self,LadoA,LadoB,LadoC):
+    def calcularPerimetro(self):
         
-        self.perimetro = LadoA + LadoB + LadoC
-
+        perimetro = self.ladoa + self.ladob +self.ladoc
+        return perimetro
+    
     def getMaiorLado(self):
         pass
 
-
 triagunlo1 = Triangulo(LadoA = int(input('Digite o lado A. ')), LadoB = int(input('Digite o lado B. ')), LadoC = int(input('Digite o lado C. ')))
+
+print(f'O perímetro do triangulo é {triagunlo1.calcularPerimetro()}.')

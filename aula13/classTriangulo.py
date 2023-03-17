@@ -11,8 +11,6 @@ class Triangulo:
         perimetro = self.ladoa + self.ladob +self.ladoc
         return perimetro
     
-    def getMaiorLado(self):
-        pass
 
 triagunlo1 = Triangulo(LadoA = int(input('Digite o lado A. ')), LadoB = int(input('Digite o lado B. ')), LadoC = int(input('Digite o lado C. ')))
 

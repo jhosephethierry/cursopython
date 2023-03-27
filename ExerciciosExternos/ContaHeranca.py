@@ -1,7 +1,9 @@
 class Conta:
 
-    def __init__(self,saldo):
+    def __init__(self,conta,titular,saldo):
 
+        self._conta = conta
+        self._titular = titular
         self._saldo = saldo
 
     # outros metodos
@@ -31,7 +33,7 @@ conta.atualiza(0.01)
 contacorrente.atualiza(0.01)
 contapoupanca.atualiza(0.01)
 
-print(conta.saldo)
-print(contacorrente.saldo)
-print(contapoupanca.saldo)
+print(conta._saldo)
+print(contacorrente._saldo)
+print(contapoupanca._saldo)
 

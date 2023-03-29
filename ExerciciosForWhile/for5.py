@@ -4,6 +4,7 @@ for r in range(22):
 
         print(r)
 
+input()
 
 for r in range(22):
 

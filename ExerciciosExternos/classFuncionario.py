@@ -7,8 +7,15 @@ class Funcionario:
 
     def getBonificacao(self):
 
-        bonificacao =  self._salario * 0.15
+        bonificacao =  self._salario * 0.1
 
-        return bonificacao
+        print(f'o valor da bonificacao é R$ {bonificacao}')
+
+
+# final do programa
+        
+funcionario = Funcionario('José',7000)
+
+funcionario.getBonificacao()
 
     

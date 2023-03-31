@@ -5,6 +5,16 @@ class Pokemon:
 
         self._nome = nome
         self._tipo = tipo
+        
+        if tipo == "Terra":
+            self._tipo = PokemonTerra()
+        elif tipo == "Agua":
+            self._tipo = PokemonAgua()
+        elif tipo == "Ar":
+            self._tipo = PokemonAr()
+        elif tipo == "Fogo":
+            self._tipo = PokemonFogo()
+
         self._ataque = ataque
         self._defesa = defesa
 

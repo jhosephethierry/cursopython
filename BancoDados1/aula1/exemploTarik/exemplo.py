@@ -5,7 +5,7 @@ import json
 
 def pegarListaAtualizada():
 
-    with open("funcionario.json", 'r') as funcionariosJson:
+    with open("BancoDados1/aula1/exemploTarik/funcionario.json", 'r') as funcionariosJson:
         lista = json.load(funcionariosJson)
 
     return lista
@@ -54,7 +54,7 @@ def inserirFuncionario():
     listaFuncionarios = pegarListaAtualizada()
     listaFuncionarios.append(funcionario)
 
-    with open("funcionario.json", 'w') as funcionariosJson:
+    with open("BancoDados1/aula1/exemploTarik/funcionario.json", 'w') as funcionariosJson:
         json.dump(listaFuncionarios, funcionariosJson, indent=2)
 
 

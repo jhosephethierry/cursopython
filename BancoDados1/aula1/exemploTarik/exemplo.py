@@ -21,8 +21,7 @@ def verFuncionarios():
 
     for funcionario in listaFuncionarios:
 
-        print(
-            f'{funcionario["nome"]} | {funcionario["cpf"]} | {funcionario["salario"]} | {funcionario["cargo"]} | {funcionario["departamento"]}')
+        print(f'{funcionario["nome"]} | {funcionario["cpf"]} | {funcionario["salario"]} | {funcionario["cargo"]} | {funcionario["departamento"]}')
 
     input()
 

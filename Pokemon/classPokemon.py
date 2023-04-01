@@ -119,18 +119,18 @@ class Treinador:
         self._tipoPokemon = input("Escolha o tipo. ")
         match self._tipoPokemon:
             case "1":
-                self._tipo = "Terra"
+                self._tipoPokemon = "Terra"
             case "2":
-                self._tipo = "Agua"
+                self._tipoPokemon = "Agua"
             case "3":
-                self._tipo = "Ar"
+                self._tipoPokemon = "Ar"
             case "4":
-                self._tipo = "Fogo"
+                self._tipoPokemon = "Fogo"
 
         self._ataque = int(input("Escolha um valor de poder de ataque. "))
         self._defesa = int(input("Agora escolha o valor para o poder de defesa. "))
 
-        print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipo} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
+        print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
 
         
 

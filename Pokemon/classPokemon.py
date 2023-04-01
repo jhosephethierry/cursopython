@@ -96,12 +96,15 @@ class PokemonFogo(Pokemon):
 # Superclasse Treinador
 class Treinador:
 
-    def __init__(self,nome):
+    def __init__(self, nome):
         
         self._nome = nome
+        self._nomePokemon = []
         self._timepokemon = []
 
     def criarPokemon(self):
+
+        self._pokemonCriado = ()
 
         print("Crie seu pokemon")
         self._nomePokemon = input("Escolha o nome do seu pokemon. ")
@@ -124,8 +127,14 @@ class Treinador:
 
         print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipo} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
 
-        # return self._timepokemon.append({self._nomePokemon},{self._tipoPokemon},{self._ataque},{self._defesa})
         
+
+    def adicionarAoTime(self):
+
+        self._pokemonCriado = [self._nome, self._tipoPokemon, self._ataque, self._defesa]
+        
+        self._timepokemon.append(self._pokemonCriado)
+        print(f"{self._nomePokemon} foi adicionado ao seu time.")
 
     def mostrarTimePokemon(self):
 
@@ -147,4 +156,5 @@ class Oponente(Treinador):
 
 Thierry = Treinador("Thierry")
 Thierry.criarPokemon()
+Thierry.adicionarAoTime()
 Thierry.mostrarTimePokemon()

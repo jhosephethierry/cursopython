@@ -101,10 +101,14 @@ class Treinador:
         self._nome = []
         self._timepokemon = []
 
+
+
     def criarTreinador(self):
 
         self._nome = input("Escreva seu nome. ")
         print(f"Ola {self._nome}.")
+
+
 
     def criarPokemon(self):
 
@@ -133,14 +137,10 @@ class Treinador:
 
         print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
 
-        
-
-    def adicionarAoTime(self):
-
-        self._pokemonCriado = [self._nomePokemon, self._tipoPokemon, self._ataque, self._defesa]
-        
         self._timepokemon.append(self._pokemonCriado)
         print(f"{self._nomePokemon} foi adicionado ao seu time.")
+
+
 
     def mostrarTimePokemon(self):
 
@@ -155,22 +155,13 @@ class Jogador(Treinador):
     def __init__(self):
         super().__init__()
 
-    def criarJogador(self):
-
-        self._nome = input("Escreva seu nome. ")
-        print(f"Ola {self._nome}.")
-
-    
-
 class Oponente(Treinador):
 
-   def __init__(self):
-       super().__init__()
-
-   def criarOponente(self):
-
-        self._nome = input("Escreva o nome do seu oponente. ")
-        print(f"Ola seu oponente e {self._nome}.")
+    def __init__(self):
+        super().__init__()
 
 
-
+jogador = Jogador()
+jogador.criarTreinador()
+jogador.criarPokemon()
+jogador.mostrarTimePokemon()

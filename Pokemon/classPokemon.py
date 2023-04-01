@@ -99,16 +99,16 @@ class Treinador:
     def __init__(self):
         
         self._nome = []
-        self._nomePokemon = []
         self._timepokemon = []
 
     def criarTreinador(self):
-        
+
         self._nome = input("Escreva seu nome. ")
         print(f"Ola {self._nome}.")
 
     def criarPokemon(self):
 
+        self._nomePokemon = []
         self._pokemonCriado = ()
 
         print("Crie seu pokemon")
@@ -116,6 +116,7 @@ class Treinador:
 
         print("O tipo do seu pokemon pode ser.")
         print(" 1. Terra | 2. Agua | 3.Ar | 4. Fogo")
+
         self._tipoPokemon = input("Escolha o tipo. ")
         match self._tipoPokemon:
             case "1":
@@ -151,18 +152,25 @@ class Treinador:
 # Subclasses Treinador
 class Jogador(Treinador):
 
-    def __init__(self, nome, timepokemon):
-        super().__init__(nome, timepokemon)
+    def __init__(self):
+        super().__init__()
+
+    def criarJogador(self):
+
+        self._nome = input("Escreva seu nome. ")
+        print(f"Ola {self._nome}.")
+
+    
 
 class Oponente(Treinador):
 
-    def __init__(self, nome, timepokemon):
-        super().__init__(nome, timepokemon)
+   def __init__(self):
+       super().__init__()
+
+   def criarOponente(self):
+
+        self._nome = input("Escreva o nome do seu oponente. ")
+        print(f"Ola seu oponente e {self._nome}.")
 
 
 
-Thierry = Treinador()
-Thierry.criarTreinador()
-Thierry.criarPokemon()
-Thierry.adicionarAoTime()
-Thierry.mostrarTimePokemon()

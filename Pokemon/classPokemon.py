@@ -1,20 +1,10 @@
 # Superclasse Pokemon
 class Pokemon:
 
-    def __init__(self,nome,tipo,ataque,defesa):
+    def __init__(self,nomePokemon,tipoPokemon,ataque,defesa):
 
-        self._nome = nome
-        self._tipo = tipo
-        
-        if tipo == "Terra":
-            self._tipo = PokemonTerra()
-        elif tipo == "Agua":
-            self._tipo = PokemonAgua()
-        elif tipo == "Ar":
-            self._tipo = PokemonAr()
-        elif tipo == "Fogo":
-            self._tipo = PokemonFogo()
-
+        self._nomePokemon = nomePokemon
+        self._tipoPokemon = tipoPokemon
         self._ataque = ataque
         self._defesa = defesa
 
@@ -23,8 +13,8 @@ class Pokemon:
 # Subclasses Pokemon
 class PokemonTerra(Pokemon):
 
-    def __init__(self, nome, tipo, ataque, defesa, pokemonOponente):
-        super().__init__(nome, tipo, ataque, defesa)
+    def __init__(self, nomePokemon, tipoPokemon, ataque, defesa,pokemonOponente):
+        super().__init__(nomePokemon, tipoPokemon, ataque, defesa)
 
         if pokemonOponente == PokemonTerra():
             self._ataque = self._ataque * 0.10
@@ -41,8 +31,8 @@ class PokemonTerra(Pokemon):
 
 class PokemonAgua(Pokemon):
 
-    def __init__(self, nome, tipo, ataque, defesa, pokemonOponente):
-        super().__init__(nome, tipo, ataque, defesa)
+    def __init__(self, nomePokemon, tipoPokemon, ataque, defesa,pokemonOponente):
+        super().__init__(nomePokemon, tipoPokemon, ataque, defesa)
 
         if pokemonOponente == PokemonTerra():
             self._ataque = self._ataque * 0.10
@@ -59,8 +49,8 @@ class PokemonAgua(Pokemon):
         
 class PokemonAr(Pokemon):
 
-    def __init__(self, nome, tipo, ataque, defesa, pokemonOponente):
-        super().__init__(nome, tipo, ataque, defesa)
+    def __init__(self, nomePokemon, tipoPokemon, ataque, defesa,pokemonOponente):
+        super().__init__(nomePokemon, tipoPokemon, ataque, defesa)
 
         if pokemonOponente == PokemonTerra():
             self._ataque = self._ataque * 0.10
@@ -77,8 +67,8 @@ class PokemonAr(Pokemon):
 
 class PokemonFogo(Pokemon):
 
-    def __init__(self, nome, tipo, ataque, defesa, pokemonOponente):
-        super().__init__(nome, tipo, ataque, defesa)
+    def __init__(self, nomePokemon, tipoPokemon, ataque, defesa,pokemonOponente):
+        super().__init__(nomePokemon, tipoPokemon, ataque, defesa)
 
         if pokemonOponente == PokemonTerra():
             self._ataque = self._ataque * 0.10
@@ -102,6 +92,34 @@ class Treinador:
         
         self._nome = nome
         self._timepokemon = timepokemon
+
+    def criarPokemon(self):
+
+        print("Crie seu pokemon")
+        self._nomePokemon = input("Escolha o nome do seu pokemon. ")
+
+        print("O tipo do seu pokemon pode ser.")
+        print(" 1. Terra | 2. Agua | 3.Ar | 4. Fogo")
+        self._tipoPokemon = input("Escolha o tipo. ")
+        match self._tipoPokemon:
+            case "1":
+                self._tipo = PokemonTerra()
+            case "2":
+                self._tipo = PokemonAgua()
+            case "3":
+                self._tipo = PokemonAr()
+            case "4":
+                self._tipo = PokemonFogo()
+
+        self._ataque = input(int("Escolha um valor de poder de ataque. "))
+        self._defesa = input(int("Agora escolha o valor para o poder de defesa. "))
+
+        print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
+
+    def mostrarTimePokemon(self):
+
+
+
 
 
 

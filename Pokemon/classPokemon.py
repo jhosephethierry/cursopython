@@ -136,7 +136,7 @@ class Treinador:
 
     def adicionarAoTime(self):
 
-        self._pokemonCriado = [self._nome, self._tipoPokemon, self._ataque, self._defesa]
+        self._pokemonCriado = [self._nomePokemon, self._tipoPokemon, self._ataque, self._defesa]
         
         self._timepokemon.append(self._pokemonCriado)
         print(f"{self._nomePokemon} foi adicionado ao seu time.")

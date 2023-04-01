@@ -18,16 +18,16 @@ class PokemonTerra(Pokemon):
 
         self._tipoPokemon = "Terra"
 
-        if pokemonOponente == PokemonTerra():
+        if pokemonOponente == "Terra":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonAgua():
+        elif pokemonOponente == "Agua":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonAr():
+        elif pokemonOponente == "Ar":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonFogo():
+        elif pokemonOponente == "Fogo":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
 
@@ -38,16 +38,16 @@ class PokemonAgua(Pokemon):
 
         self._tipoPokemon = "Agua"
         
-        if pokemonOponente == PokemonTerra():
+        if pokemonOponente == "Terra":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonAgua():
+        elif pokemonOponente == "Agua":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonAr():
+        elif pokemonOponente == "Ar":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonFogo():
+        elif pokemonOponente == "Fogo":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
         
@@ -58,16 +58,16 @@ class PokemonAr(Pokemon):
 
         self._tipoPokemon = "Ar"
 
-        if pokemonOponente == PokemonTerra():
+        if pokemonOponente == "Terra":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonAgua():
+        elif pokemonOponente == "Agua":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonAr():
+        elif pokemonOponente == "Ar":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonFogo():
+        elif pokemonOponente == "Fogo":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
 
@@ -78,16 +78,16 @@ class PokemonFogo(Pokemon):
 
         self._tipoPokemon = "Fogo"
 
-        if pokemonOponente == PokemonTerra():
+        if pokemonOponente == "Terra":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonAgua():
+        elif pokemonOponente == "Agua":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonAr():
+        elif pokemonOponente == "Ar":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
-        elif pokemonOponente == PokemonFogo():
+        elif pokemonOponente == "Fogo":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
 

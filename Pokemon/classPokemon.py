@@ -114,7 +114,7 @@ class Treinador:
 
         self._nomePokemon = []
         self._pokemonCriado = ()
-
+        
         print("Crie seu pokemon")
         self._nomePokemon = input("Escolha o nome do seu pokemon. ")
 
@@ -139,6 +139,11 @@ class Treinador:
 
         self._timepokemon.append(self._pokemonCriado)
         print(f"{self._nomePokemon} foi adicionado ao seu time.")
+
+        continuar = input("quer continuar criando pokemons? ")
+
+        
+
 
 
 

@@ -96,11 +96,16 @@ class PokemonFogo(Pokemon):
 # Superclasse Treinador
 class Treinador:
 
-    def __init__(self, nome):
+    def __init__(self):
         
-        self._nome = nome
+        self._nome = []
         self._nomePokemon = []
         self._timepokemon = []
+
+    def criarTreinador(self):
+        
+        self._nome = input("Escreva seu nome. ")
+        print(f"Ola {self._nome}.")
 
     def criarPokemon(self):
 
@@ -138,7 +143,9 @@ class Treinador:
 
     def mostrarTimePokemon(self):
 
-        print(self._timepokemon)
+        print("Seu time pokemon e.")
+        for i in range(len(self._timepokemon)):
+                print(f"{i+1}. {self._timepokemon[i]}")
 
 
 # Subclasses Treinador
@@ -154,7 +161,8 @@ class Oponente(Treinador):
 
 
 
-Thierry = Treinador("Thierry")
+Thierry = Treinador()
+Thierry.criarTreinador()
 Thierry.criarPokemon()
 Thierry.adicionarAoTime()
 Thierry.mostrarTimePokemon()

@@ -209,6 +209,7 @@ class Oponente(Treinador):
 
     def __init__(self):
         super().__init__()
+    
 
 
 # self._pokemonCriado = [f"{self._nomePokemon} | Tipo {self._tipoPokemon} | Ataque {self._ataque} | Defesa {self._defesa}"]

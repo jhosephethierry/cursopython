@@ -1,35 +1,8 @@
 import classPokemon
 
-
 treinador = classPokemon.Treinador()
-jogador = classPokemon.Jogador()
-oponente = classPokemon.Oponente()
 
-def menuInicial():
-
-    opcao = ""
-    while(opcao != '3'):
-        print("Escolha o modo de entrada")
-        opcao = input("1. Modo Jogador | 2. Modo Oponente | 3. Sair : ")
-        
-        if opcao == '1':
-            print("Voce esta no modo Jogador")
-            print("")
-            menuJogador()         
-
-        elif opcao == '2':
-            print("Voce esta no modo Oponente")
-            print("")
-            menuOponente()     
-
-        elif opcao == '3':
-            print("Voce escolheu sair")
-            break            
-        else:
-            print("Opção Inválida! Tente novamente.")          
-            
-
-def menuJogador():
+def menuTreinador():
 
     opcao = ""
     while(opcao != '5'):
@@ -39,26 +12,26 @@ def menuJogador():
         if opcao == '1':
             print("Vamos criar o treinador")
             print("")
-            jogador.criarTreinador()                     
-            print(f"{jogador._nome} criado")
+            treinador.criarTreinador()                     
+            print(f"{treinador._nome} criado")
             print("")
           
         elif opcao == '2':            
             print("Vamos criar o pokemon")
             print("")
-            jogador.criarPokemon()
+            treinador.criarPokemon()
             print("")
                              
         elif opcao == '3':
             print("Esse e o time pokemon")
             print("")
-            jogador.mostrarTimePokemon()
+            treinador.mostrarTimePokemon()
             print("")
 
         elif opcao == '4':
             print("Esse e o mundo pokemon")
             print("")
-            jogador.mostrarMundoPokemon()
+            treinador.mostrarMundoPokemon()
             print("") 
 
         elif opcao == '5':
@@ -67,35 +40,9 @@ def menuJogador():
         else:
             print("Opção Inválida! Tente novamente.")
 
-menuJogador()
+menuTreinador()
             
-def menuOponente():
 
-    opcao = ""
-    while(opcao != '3'):
-        print("Escolha uma opcao no menu.")
-        opcao = input("1. Criar Oponente | 2. Mostrar Mundo Pokemon | 3. Sair : ")
-        
-        if opcao == '1':
-            print("Vamos criar o oponente")
-            print("")
-            oponente.criarTreinador()                     
-            print(f"{oponente._nome} criado")
-            print("")
-
-        elif opcao == '2':
-            print("Esse e o mundo pokemon")
-            print("")
-            oponente.mostrarMundoPokemon()
-            print("") 
-
-        elif opcao == '3':
-            print("Voce escolheu sair")
-            break            
-        else:
-            print("Opção Inválida! Tente novamente.")
-
-menuOponente()
 
 
 

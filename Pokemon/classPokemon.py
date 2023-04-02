@@ -199,12 +199,16 @@ class Treinador:
     
     def capturarPokemon(self):
 
-        pokemonCapturado = input("Escreva o nome do pokemon que voce quer capturar. ")
-        print("")
-
         with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
-            mundopokemon = json.load(mundoPokemonJson)     
-               
+            mundopokemon = json.load(mundoPokemonJson)
+            print("Esse e o mundo pokemon")
+            print(mundopokemon)
+
+        pokemonCapturado = input("Escreva o nome do pokemon que voce quer capturar. ")
+
+        if pokemonCapturado == "":
+            print("Opção Inválida! Tente novamente.")
+
         for pokemonCapturado in mundopokemon:
 
             print(f"Voce escolheu {pokemonCapturado}.")
@@ -224,6 +228,8 @@ class Treinador:
                         json.dump(self._timepokemon, timePokemonJson, indent=2)
 
                 adicionarAoTimeJson()
+            
+            
 
         if adicionar == "n":    
             print(f"{pokemonCapturado} foi descartado.")

@@ -37,7 +37,7 @@ def menuTreinador():
         elif opcao == '5':
             print("Vamos capturar pokemons")
             print("")
-            treinador.mostrarMundoPokemon()
+            treinador.capturarPokemon()
             print("") 
 
         elif opcao == '6':

@@ -199,23 +199,46 @@ class Treinador:
     
     def capturarPokemon(self):
 
-        def adicionarAoTime():
+        pokemonCapturado = input("Escreva o nome do pokemon que voce quer capturar. ")
+        print("")
 
-            with open("Pokemon/mundoPokemon.json", 'r' and 'w') as mundoPokemonJson:
-                json.append(mundoPokemonJson)
+        with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
+            mundopokemon = json.load(mundoPokemonJson)     
+               
+        for pokemonCapturado in mundopokemon:
 
-            print("")
-            print(f"{self._nomePokemon} foi adicionado ao seu time.")
+            print(f"Voce escolheu {pokemonCapturado}.")
+            adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
+            if adicionar == "s":
+
+                def adicionarAoTime():
+
+                    self._timepokemon.append(pokemonCapturado)
+
+                    print("")
+                    print(f"{pokemonCapturado} foi adicionado ao seu time.")
+
+                def adicionarAoTimeJson():
+
+                    with open("Pokemon/timePokemon.json", 'w') as timePokemonJson:
+                        json.dump(self._timepokemon, timePokemonJson, indent=2)
+
+                adicionarAoTimeJson()
+
+        if adicionar == "n":    
+            print(f"{pokemonCapturado} foi descartado.")
+
+        
+
+
 
         adicionarAoTime()
+                
+            
 
-        def adicionarAoTimeJson():
+        
 
-                with open("Pokemon/timePokemon.json", 'w') as timePokemonJson:
-                            
-                    json.dump(self._timepokemon, timePokemonJson, indent=2)
-
-        adicionarAoTimeJson()
+          
 
 # Subclasses Treinador
 class Jogador(Treinador):

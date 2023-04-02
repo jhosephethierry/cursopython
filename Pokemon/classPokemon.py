@@ -141,7 +141,6 @@ class Treinador:
             print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
 
             self._pokemonCriado = {"Nome": [self._nomePokemon], "Tipo": [self._tipoPokemon], "Ataque": [self._ataque], "Defesa": [self._defesa]}
-
             print("")
             adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
             if adicionar == "s":
@@ -152,6 +151,14 @@ class Treinador:
 
                     print("")
                     print(f"{self._nomePokemon} foi adicionado ao seu time.")
+
+                    def adicionarAoTimeJson():
+
+                        with open("Pokemon/timePokemon.json", 'w') as mundoPokemonJson:
+                            
+                            json.dump(self._timepokemon, mundoPokemonJson, indent=2)
+
+                    adicionarAoTimeJson()
 
                     def adicionarAoMundo():
 

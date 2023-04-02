@@ -1,8 +1,7 @@
 import classPokemon
-import random
 
-jogador = classPokemon.Jogador()
-oponente = classPokemon.Oponente()
+
+treinador = classPokemon.Treinador()
 
 def menuJogador():
     opcao = ""
@@ -13,26 +12,26 @@ def menuJogador():
         if opcao == '1':
             print("Vamos criar o treinador")
             print("")
-            jogador.criarTreinador()                     
-            print(f"{jogador._nome} criado")
+            treinador.criarTreinador()                     
+            print(f"{treinador._nome} criado")
             print("")
           
         elif opcao == '2':            
             print("Vamos criar o pokemon")
             print("")
-            jogador.criarPokemon()
+            treinador.criarPokemon()
             print("")
                              
         elif opcao == '3':
             print("Esse e o time pokemon")
             print("")
-            jogador.mostrarTimePokemon()
+            treinador.mostrarTimePokemon()
             print("")
 
         elif opcao == '4':
             print("Esse e o mundo pokemon")
             print("")
-            jogador.mostrarMundoPokemon()
+            treinador.mostrarMundoPokemon()
             print("") 
 
         elif opcao == '5':

@@ -21,17 +21,17 @@ class PokemonTerra(Pokemon):
         self._tipoPokemon = "Terra"
 
         if pokemonOponente == "Terra":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+            self._ataque = self._ataque 
+            self._defesa = self._defesa
         elif pokemonOponente == "Agua":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+            self._ataque = self._ataque * 0.5
+            self._defesa = self._defesa * 0.5
         elif pokemonOponente == "Ar":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+            self._ataque = self._ataque * 0.5
+            self._defesa = self._defesa * 2
         elif pokemonOponente == "Fogo":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+            self._ataque = self._ataque * 2
+            self._defesa = self._defesa * 0.5
 
 class PokemonAgua(Pokemon):
 
@@ -44,8 +44,8 @@ class PokemonAgua(Pokemon):
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
         elif pokemonOponente == "Agua":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+            self._ataque = self._ataque 
+            self._defesa = self._defesa
         elif pokemonOponente == "Ar":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
@@ -67,8 +67,8 @@ class PokemonAr(Pokemon):
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
         elif pokemonOponente == "Ar":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+            self._ataque = self._ataque 
+            self._defesa = self._defesa
         elif pokemonOponente == "Fogo":
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
@@ -90,8 +90,8 @@ class PokemonFogo(Pokemon):
             self._ataque = self._ataque * 0.10
             self._defesa = self._defesa * 0.10
         elif pokemonOponente == "Fogo":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+            self._ataque = self._ataque
+            self._defesa = self._defesa
 
 
 
@@ -153,9 +153,9 @@ class Treinador:
 
                     def adicionarAoTimeJson():
 
-                        with open("Pokemon/timePokemon.json", 'w') as mundoPokemonJson:
+                        with open("Pokemon/timePokemon.json", 'w') as timePokemonJson:
                             
-                            json.dump(self._timepokemon, mundoPokemonJson, indent=2)
+                            json.dump(self._timepokemon, timePokemonJson, indent=2)
 
                     adicionarAoTimeJson()
 

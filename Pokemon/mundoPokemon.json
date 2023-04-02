@@ -10,7 +10,21 @@
       1000
     ],
     "Defesa": [
-      300
+      1000
+    ]
+  },
+  {
+    "Nome": [
+      "Charmilion"
+    ],
+    "Tipo": [
+      "Fogo"
+    ],
+    "Ataque": [
+      2000
+    ],
+    "Defesa": [
+      2000
     ]
   }
 ]

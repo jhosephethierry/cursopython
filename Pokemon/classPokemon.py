@@ -149,13 +149,14 @@ class Treinador:
                 def adicionarAoTime():
 
                     self._timepokemon.append(self._pokemonCriado)
-                    
+
                     print("")
                     print(f"{self._nomePokemon} foi adicionado ao seu time.")
 
                     def adicionarAoMundo():
 
                         with open("Pokemon/mundoPokemon.json", 'w') as mundoPokemonJson:
+                            
                             json.dump(self._timepokemon, mundoPokemonJson, indent=2)
 
                     adicionarAoMundo()

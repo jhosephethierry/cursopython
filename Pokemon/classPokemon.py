@@ -100,6 +100,7 @@ class Treinador:
         
         self._nome = []
         self._timepokemon = []
+        self._pokemonCriado = []
 
 
 
@@ -114,8 +115,6 @@ class Treinador:
         def criar():
 
             self._nomePokemon = []
-            self._pokemonCriado = ()
-        
             self._nomePokemon = input("Escolha o nome do seu pokemon. ")
 
             print("O tipo do seu pokemon pode ser.")
@@ -137,12 +136,13 @@ class Treinador:
 
             print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
 
+            self._pokemonCriado = [f"{self._nomePokemon} | Tipo {self._tipoPokemon} | Ataque {self._ataque} | Defesa {self._defesa}"]
+
             adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
             if adicionar == "s":
 
                 def adicionarAoTime():
 
-                    self._pokemonCriado = [{self._nomePokemon}, {self._tipoPokemon}, {self._ataque}, {self._defesa}]
                     self._timepokemon.append(self._pokemonCriado)
                     print(f"{self._nomePokemon} foi adicionado ao seu time.")
 
@@ -163,10 +163,9 @@ class Treinador:
 
 
     def mostrarTimePokemon(self):
-            
-
-            for i in range(len(self._timepokemon)):
-                print(f"{i+1}. {self._pokemonCriado[i]}")
+        
+        for r in range(len(self._timepokemon)):
+            print(f"{r+1}. {self._timepokemon[r]}")
 
 
 

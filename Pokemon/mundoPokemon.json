@@ -1,0 +1,30 @@
+[
+  {
+    "Nome": [
+      "Charmilion"
+    ],
+    "Tipo": [
+      "Fogo"
+    ],
+    "Ataque": [
+      2000
+    ],
+    "Defesa": [
+      3000
+    ]
+  },
+  {
+    "Nome": [
+      "Venossaur"
+    ],
+    "Tipo": [
+      "Terra"
+    ],
+    "Ataque": [
+      1600
+    ],
+    "Defesa": [
+      800
+    ]
+  }
+]

@@ -1,3 +1,6 @@
+import json
+
+
 # Superclasse Pokemon
 class Pokemon:
 
@@ -117,8 +120,8 @@ class Treinador:
             self._nomePokemon = []
             self._nomePokemon = input("Escolha o nome do seu pokemon. ")
 
-            print("O tipo do seu pokemon pode ser.")
-            print("1. Terra | 2. Agua | 3.Ar | 4. Fogo")
+            print("")
+            print("Estes sao os tipos disponiveis 1. Terra | 2. Agua | 3.Ar | 4. Fogo")
 
             self._tipoPokemon = input("Escolha o tipo. ")
             match self._tipoPokemon:
@@ -134,22 +137,33 @@ class Treinador:
             self._ataque = int(input("Escolha um valor de poder de ataque. "))
             self._defesa = int(input("Agora escolha o valor para o poder de defesa. "))
 
+            print("")
             print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
 
-            self._pokemonCriado = [f"{self._nomePokemon} | Tipo {self._tipoPokemon} | Ataque {self._ataque} | Defesa {self._defesa}"]
+            self._pokemonCriado = {"Nome": [self._nomePokemon], "Tipo": [self._tipoPokemon], "Ataque": [self._ataque], "Defesa": [self._defesa]}
 
+            print("")
             adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
             if adicionar == "s":
 
                 def adicionarAoTime():
 
                     self._timepokemon.append(self._pokemonCriado)
+                    print("")
                     print(f"{self._nomePokemon} foi adicionado ao seu time.")
+
+                    def adicionarAoMundo():
+
+                        with open("Pokemon/mundoPokemon.json", 'w') as mundoPokemonJson:
+                            json.dump(self._timepokemon, mundoPokemonJson, indent=2)
+
+                    adicionarAoMundo()
 
                 adicionarAoTime()
                 
             elif adicionar == "n":
                 
+                print("")
                 print(f"{self._nomePokemon} foi descartado.")
    
             continuar = input("quer continuar criando pokemons? ")
@@ -167,6 +181,15 @@ class Treinador:
         for r in range(len(self._timepokemon)):
             print(f"{r+1}. {self._timepokemon[r]}")
 
+    def mostrarMundoPokemon(self):
+
+        with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
+            mundopokemon = json.load(mundoPokemonJson)
+            for r in range(len(mundopokemon)):
+                print(f"{r+1}. {mundopokemon[r]}")
+
+        return mundopokemon
+
 
 
 # Subclasses Treinador
@@ -181,3 +204,4 @@ class Oponente(Treinador):
         super().__init__()
 
 
+# self._pokemonCriado = [f"{self._nomePokemon} | Tipo {self._tipoPokemon} | Ataque {self._ataque} | Defesa {self._defesa}"]

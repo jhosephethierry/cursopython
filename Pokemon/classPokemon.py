@@ -105,53 +105,69 @@ class Treinador:
 
     def criarTreinador(self):
 
-        self._nome = input("Escreva seu nome. ")
-        print(f"Ola {self._nome}.")
+        self._nome = input("Escreva o nome do treinador. ")
 
 
 
     def criarPokemon(self):
 
-        self._nomePokemon = []
-        self._pokemonCriado = ()
+        def criar():
+
+            self._nomePokemon = []
+            self._pokemonCriado = ()
         
-        print("Crie seu pokemon")
-        self._nomePokemon = input("Escolha o nome do seu pokemon. ")
+            self._nomePokemon = input("Escolha o nome do seu pokemon. ")
 
-        print("O tipo do seu pokemon pode ser.")
-        print(" 1. Terra | 2. Agua | 3.Ar | 4. Fogo")
+            print("O tipo do seu pokemon pode ser.")
+            print("1. Terra | 2. Agua | 3.Ar | 4. Fogo")
 
-        self._tipoPokemon = input("Escolha o tipo. ")
-        match self._tipoPokemon:
-            case "1":
-                self._tipoPokemon = "Terra"
-            case "2":
-                self._tipoPokemon = "Agua"
-            case "3":
-                self._tipoPokemon = "Ar"
-            case "4":
-                self._tipoPokemon = "Fogo"
+            self._tipoPokemon = input("Escolha o tipo. ")
+            match self._tipoPokemon:
+                case "1":
+                    self._tipoPokemon = "Terra"
+                case "2":
+                    self._tipoPokemon = "Agua"
+                case "3":
+                    self._tipoPokemon = "Ar"
+                case "4":
+                    self._tipoPokemon = "Fogo"
 
-        self._ataque = int(input("Escolha um valor de poder de ataque. "))
-        self._defesa = int(input("Agora escolha o valor para o poder de defesa. "))
+            self._ataque = int(input("Escolha um valor de poder de ataque. "))
+            self._defesa = int(input("Agora escolha o valor para o poder de defesa. "))
 
-        print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
+            print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
 
-        self._timepokemon.append(self._pokemonCriado)
-        print(f"{self._nomePokemon} foi adicionado ao seu time.")
+            adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
+            if adicionar == "s":
 
-        continuar = input("quer continuar criando pokemons? ")
+                def adicionarAoTime():
 
-        
+                    self._pokemonCriado = [{self._nomePokemon}, {self._tipoPokemon}, {self._ataque}, {self._defesa}]
+                    self._timepokemon.append(self._pokemonCriado)
+                    print(f"{self._nomePokemon} foi adicionado ao seu time.")
 
+                adicionarAoTime()
+                
+            elif adicionar == "n":
+                
+                print(f"{self._nomePokemon} foi descartado.")
+   
+            continuar = input("quer continuar criando pokemons? ")
+            while continuar == "s":
+                criar()
+                if continuar == "n":
+                    print("voce escolheu parar.")
+                break
 
+        criar()
 
 
     def mostrarTimePokemon(self):
+            
 
-        print("Seu time pokemon e.")
-        for i in range(len(self._timepokemon)):
-                print(f"{i+1}. {self._timepokemon[i]}")
+            for i in range(len(self._timepokemon)):
+                print(f"{i+1}. {self._pokemonCriado[i]}")
+
 
 
 # Subclasses Treinador
@@ -166,7 +182,3 @@ class Oponente(Treinador):
         super().__init__()
 
 
-jogador = Jogador()
-jogador.criarTreinador()
-jogador.criarPokemon()
-jogador.mostrarTimePokemon()

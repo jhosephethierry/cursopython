@@ -229,22 +229,11 @@ class Treinador:
 
                 adicionarAoTimeJson()
             
-            
-
         if adicionar == "n":    
             print(f"{pokemonCapturado} foi descartado.")
 
-        
-
-
-
         adicionarAoTime()
                 
-            
-
-        
-
-          
 
 # Subclasses Treinador
 class Jogador(Treinador):

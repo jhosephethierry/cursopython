@@ -40,5 +40,19 @@
     "Defesa": [
       300
     ]
+  },
+  {
+    "Nome": [
+      "Charizard"
+    ],
+    "Tipo": [
+      "Fogo"
+    ],
+    "Ataque": [
+      5000
+    ],
+    "Defesa": [
+      3000
+    ]
   }
 ]

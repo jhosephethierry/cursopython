@@ -1,16 +1,44 @@
 [
   {
     "Nome": [
+      "Pikachu"
+    ],
+    "Tipo": [
+      "Agua"
+    ],
+    "Ataque": [
+      1000
+    ],
+    "Defesa": [
+      300
+    ]
+  },
+  {
+    "Nome": [
+      "Pikachu"
+    ],
+    "Tipo": [
+      "Agua"
+    ],
+    "Ataque": [
+      1000
+    ],
+    "Defesa": [
+      300
+    ]
+  },
+  {
+    "Nome": [
       "Charmander"
     ],
     "Tipo": [
       "Fogo"
     ],
     "Ataque": [
-      100
+      1000
     ],
     "Defesa": [
-      100
+      300
     ]
   }
 ]

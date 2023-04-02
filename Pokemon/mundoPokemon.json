@@ -1,30 +1,16 @@
 [
   {
     "Nome": [
-      "Charmilion"
+      "Charmander"
     ],
     "Tipo": [
       "Fogo"
     ],
     "Ataque": [
-      2000
+      1000
     ],
     "Defesa": [
-      3000
-    ]
-  },
-  {
-    "Nome": [
-      "Venossaur"
-    ],
-    "Tipo": [
-      "Terra"
-    ],
-    "Ataque": [
-      1600
-    ],
-    "Defesa": [
-      800
+      300
     ]
   }
 ]

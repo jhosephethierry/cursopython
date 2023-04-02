@@ -149,6 +149,7 @@ class Treinador:
                 def adicionarAoTime():
 
                     self._timepokemon.append(self._pokemonCriado)
+                    
                     print("")
                     print(f"{self._nomePokemon} foi adicionado ao seu time.")
 
@@ -163,7 +164,6 @@ class Treinador:
                 
             elif adicionar == "n":
                 
-                print("")
                 print(f"{self._nomePokemon} foi descartado.")
    
             continuar = input("quer continuar criando pokemons? ")

@@ -196,8 +196,26 @@ class Treinador:
                 print(f"{r+1}. {mundopokemon[r]}")
 
         return mundopokemon
+    
+    def capturarPokemon(self):
 
+        def adicionarAoTime():
 
+            with open("Pokemon/mundoPokemon.json", 'r' and 'w') as mundoPokemonJson:
+                json.append(mundoPokemonJson)
+
+            print("")
+            print(f"{self._nomePokemon} foi adicionado ao seu time.")
+
+        adicionarAoTime()
+
+        def adicionarAoTimeJson():
+
+                with open("Pokemon/timePokemon.json", 'w') as timePokemonJson:
+                            
+                    json.dump(self._timepokemon, timePokemonJson, indent=2)
+
+        adicionarAoTimeJson()
 
 # Subclasses Treinador
 class Jogador(Treinador):

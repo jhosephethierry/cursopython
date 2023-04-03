@@ -10,5 +10,23 @@
     "Tipo": "Fogo",
     "Ataque": 145,
     "Defesa": 123
+  },
+  {
+    "Nome": "Pikachu",
+    "Tipo": "Ar",
+    "Ataque": 1000,
+    "Defesa": 1000
+  },
+  {
+    "Nome": "Charmander",
+    "Tipo": "Fogo",
+    "Ataque": 1000,
+    "Defesa": 1000
+  },
+  {
+    "Nome": "Charmander",
+    "Tipo": "Fogo",
+    "Ataque": 1000,
+    "Defesa": 1000
   }
 ]

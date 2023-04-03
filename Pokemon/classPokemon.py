@@ -9,29 +9,44 @@ class Pokemon:
         self._tipoPokemon = tipoPokemon
         self._ataque = ataque
         self._defesa = defesa
+    
+    def gerarDicionario(self):
+        
+        pokeDicionario = {"Nome":self._nomePokemon, "Tipo": self._tipoPokemon, "Ataque": self._ataque, "Defesa": self._defesa}
+        return pokeDicionario
+    
+    def batalhar(self,oponente):
+        
+        ataqueAtual = 0
+        defesaAtual = 0
+        
+        if oponente._tipoPokemon == "Terra":
+            ataqueAtual = self._ataque 
+            defesaAtual = self._defesa
+        elif oponente._tipoPokemon == "Agua":
+            ataqueAtual = self._ataque * 0.5
+            self._defesa = self._defesa * 0.5
+        elif oponente._tipoPokemon == "Ar":
+            self._ataque = self._ataque * 0.5
+            self._defesa = self._defesa * 2
+        elif oponente._tipoPokemon == "Fogo":
+            self._ataque = self._ataque * 2
+            self._defesa = self._defesa * 0.5
+
+        if ataqueAtual+defesaAtual > oponente._ataque + oponente._defesa:
+            print("Eu ganho")
 
 
 
 # Subclasses Pokemon
 class PokemonTerra(Pokemon):
 
-    def __init__(self, nomePokemon, tipoPokemon, ataque, defesa, pokemonOponente):
+    def __init__(self, nomePokemon, tipoPokemon, ataque, defesa, ):
         super().__init__(nomePokemon, tipoPokemon, ataque, defesa)
 
         self._tipoPokemon = "Terra"
 
-        if pokemonOponente == "Terra":
-            self._ataque = self._ataque 
-            self._defesa = self._defesa
-        elif pokemonOponente == "Agua":
-            self._ataque = self._ataque * 0.5
-            self._defesa = self._defesa * 0.5
-        elif pokemonOponente == "Ar":
-            self._ataque = self._ataque * 0.5
-            self._defesa = self._defesa * 2
-        elif pokemonOponente == "Fogo":
-            self._ataque = self._ataque * 2
-            self._defesa = self._defesa * 0.5
+        
 
 class PokemonAgua(Pokemon):
 
@@ -100,9 +115,9 @@ class Treinador:
 
     def __init__(self):
         
-        self._nome = []
+        self._nome = ""
         self._timepokemon = []
-        self._pokemonCriado = []
+        self._pokemonCriado = {"Nome":"", "Tipo":"", "Ataque": 0, "Defesa":0}
         self._mundopokemon = []
 
 
@@ -115,83 +130,94 @@ class Treinador:
 
     def criarPokemon(self):
 
-        def criar():
+        self._pokemonCriado["Nome"] = input("Escolha o nome do seu pokemon. ")
 
-            self._nomePokemon = []
-            self._nomePokemon = input("Escolha o nome do seu pokemon. ")
+        print("")
+        print("Estes sao os tipos disponiveis 1. Terra | 2. Agua | 3.Ar | 4. Fogo")
+
+        escolhaTipo = input("Escolha o tipo. ")
+        
+        self._pokemonCriado["Ataque"] = int(input("Escolha um valor de poder de ataque. "))
+        self._pokemonCriado["Defesa"] = int(input("Agora escolha o valor para o poder de defesa. "))
+
+        match escolhaTipo:
+            case "1":
+                self._pokemonCriado["Tipo"] = "Terra"
+                novoPokemon = PokemonTerra(self._pokemonCriado['Nome'],self._pokemonCriado['Tipo'],self._pokemonCriado['Ataque'],self._pokemonCriado['Defesa'],None)
+            case "2":
+                self._pokemonCriado["Tipo"] = "Agua"
+                novoPokemon = PokemonAgua(self._pokemonCriado['Nome'],self._pokemonCriado['Tipo'],self._pokemonCriado['Ataque'],self._pokemonCriado['Defesa'],None)
+            case "3":
+                self._pokemonCriado["Tipo"] = "Ar"
+                novoPokemon = PokemonAr(self._pokemonCriado['Nome'],self._pokemonCriado['Tipo'],self._pokemonCriado['Ataque'],self._pokemonCriado['Defesa'],None)
+            case "4":
+                self._pokemonCriado["Tipo"] = "Fogo"
+                novoPokemon = PokemonFogo(self._pokemonCriado['Nome'],self._pokemonCriado['Tipo'],self._pokemonCriado['Ataque'],self._pokemonCriado['Defesa'],None)
+            case _:
+                novoPokemon = Pokemon(self._pokemonCriado['Nome'],self._pokemonCriado['Tipo'],self._pokemonCriado['Ataque'],self._pokemonCriado['Defesa'],None)
+
+        print("")
+        print(f"{self._nome}, voce criou o pokemon {self._pokemonCriado['Nome']} do tipo {self._pokemonCriado['Tipo']} com poder de ataque {self._pokemonCriado['Ataque']} e {self._pokemonCriado['Defesa']} de defesa.")
+
+        print("")
+        adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
+        if adicionar == "s":
+
+            
+            self._timepokemon.append(novoPokemon)
 
             print("")
-            print("Estes sao os tipos disponiveis 1. Terra | 2. Agua | 3.Ar | 4. Fogo")
+            print(f"{novoPokemon._nomePokemon} foi adicionado ao seu time.")
 
-            self._tipoPokemon = input("Escolha o tipo. ")
-            match self._tipoPokemon:
-                case "1":
-                    self._tipoPokemon = "Terra"
-                case "2":
-                    self._tipoPokemon = "Agua"
-                case "3":
-                    self._tipoPokemon = "Ar"
-                case "4":
-                    self._tipoPokemon = "Fogo"
+            with open("Pokemon/timePokemon.json", 'r') as timePokemonJson:
+                timeJson = json.load(timePokemonJson)
 
-            self._ataque = int(input("Escolha um valor de poder de ataque. "))
-            self._defesa = int(input("Agora escolha o valor para o poder de defesa. "))
+                timeJson.append(novoPokemon.gerarDicionario())
 
-            print("")
-            print(f"{self._nome}, voce criou o pokemon {self._nomePokemon} do tipo {self._tipoPokemon} com poder de ataque {self._ataque} e {self._defesa} de defesa.")
-
-            self._pokemonCriado = {"Nome": [self._nomePokemon], "Tipo": [self._tipoPokemon], "Ataque": [self._ataque], "Defesa": [self._defesa]}
-            print("")
-            adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
-            if adicionar == "s":
-
-                def adicionarAoTime():
-
-                    self._timepokemon.append(self._pokemonCriado)
-
-                    print("")
-                    print(f"{self._nomePokemon} foi adicionado ao seu time.")
-
-                    def adicionarAoTimeJson():
-
-                        with open("Pokemon/timePokemon.json", 'w') as timePokemonJson:
-                            
-                            json.dump(self._timepokemon, timePokemonJson, indent=2)
-
-                    adicionarAoTimeJson()
-
-                    def adicionarAoMundo():
-
-                        with open("Pokemon/mundoPokemon.json", 'w') as mundoPokemonJson:
-                            
-                            json.dump(self._timepokemon, mundoPokemonJson, indent=2)
-
-                    adicionarAoMundo()
-
-                adicionarAoTime()
+            with open("Pokemon/timePokemon.json", 'w') as timePokemonJson:
                 
-            elif adicionar == "n":
+                json.dump(timeJson, timePokemonJson, indent=2)
 
-                self._mundopokemon.append(self._pokemonCriado)
+            with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
+                mundoJson = json.load(mundoPokemonJson)
+                    
+                mundoJson.append(novoPokemon.gerarDicionario())
+
+            with open("Pokemon/mundoPokemon.json", 'w') as mundoPokemonJson:
+
                 
-                print(f"{self._nomePokemon} foi descartado do seu time, mas foi adicionado ao mundo pokemon.")
 
-                def adicionarAoMundo():
+                json.dump(mundoJson, mundoPokemonJson, indent=2)
 
-                        with open("Pokemon/mundoPokemon.json", 'w') as mundoPokemonJson:
-                            
-                            json.dump(self._mundopokemon, mundoPokemonJson, indent=2)
+            
+            
+        elif adicionar == "n":
 
-                adicionarAoMundo()
-   
-            continuar = input("quer continuar criando pokemons? ")
-            while continuar == "s":
-                criar()
-                if continuar == "n":
-                    print("voce escolheu parar.")
-                break
+            self._mundopokemon.append(novoPokemon)
+            
+            print(f"{novoPokemon._nomePokemon} foi descartado do seu time, mas foi adicionado ao mundo pokemon.")
 
-        criar()
+            with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
+                mundoJson = json.load(mundoPokemonJson)
+                    
+                mundoJson.append(novoPokemon.gerarDicionario())
+
+            with open("Pokemon/mundoPokemon.json", 'w') as mundoPokemonJson:
+
+                
+
+                json.dump(mundoJson, mundoPokemonJson, indent=2)
+
+            
+
+        continuar = input("quer continuar criando pokemons? ")
+        while continuar == "s":
+            self.criarPokemon()
+            if continuar == "n":
+                print("voce escolheu parar.")
+            break
+
+        
 
 
     def mostrarTimePokemon(self):
@@ -246,20 +272,15 @@ class Treinador:
     
     def capturarPokemon(self):
             
-        def carregarMundoPokemonJson():
-
-            with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
-                mundopokemon = json.load(mundoPokemonJson)
-                
-                return mundopokemon
-        
-        carregarMundoPokemonJson()
+        with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
+            mundopokemon = json.load(mundoPokemonJson)
+            
    
-        listamundopokemon = carregarMundoPokemonJson()
+        
 
         print("Esse e o mundo pokemon")
 
-        for pokemons in listamundopokemon:
+        for pokemons in mundopokemon:
 
             print(f'{pokemons["Nome"]} | {pokemons["Tipo"]} | {pokemons["Ataque"]} | {pokemons["Defesa"]}')
                 
@@ -267,36 +288,56 @@ class Treinador:
 
             
 
-        for pokemonAcapturar in pokemons:
+        pokemonAcapturar = input("Escreva o nome do pokemon que voce quer capturar. ")
 
-            pokemonAcapturar = input("Escreva o nome do pokemon que voce quer capturar. ")
+        print(f"Voce escolheu {pokemonAcapturar}.")
 
-            print(f"Voce escolheu {pokemonAcapturar}.")
+        pokemonEscolhido = pokemonAcapturar
 
-            pokemonEscolhido = pokemonAcapturar
+        for pokemonSelvagem in mundopokemon:
 
-            if pokemonEscolhido in self._mundopokemon:
+            if pokemonEscolhido == pokemonSelvagem["Nome"]:
 
                 adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
                 if adicionar == "s":
 
-                    def adicionarAoTime():
+                    
 
-                        self._timepokemon.append(listamundopokemon[0],listamundopokemon[1],listamundopokemon[2],listamundopokemon[3])
+                    match pokemonSelvagem["Tipo"]:
+                        case "Terra":
+                            novoPokemon = PokemonTerra(pokemonSelvagem['Nome'],pokemonSelvagem['Tipo'],pokemonSelvagem['Ataque'],pokemonSelvagem['Defesa'],None)
+                        case "Agua":
+                            
+                            novoPokemon = PokemonAgua(pokemonSelvagem['Nome'],pokemonSelvagem['Tipo'],pokemonSelvagem['Ataque'],pokemonSelvagem['Defesa'],None)
+                        case "Ar":
+                            
+                            novoPokemon = PokemonAr(pokemonSelvagem['Nome'],pokemonSelvagem['Tipo'],pokemonSelvagem['Ataque'],pokemonSelvagem['Defesa'],None)
+                        case "Fogo":
+                            
+                            novoPokemon = PokemonFogo(pokemonSelvagem['Nome'],pokemonSelvagem['Tipo'],pokemonSelvagem['Ataque'],pokemonSelvagem['Defesa'],None)
 
-                        print("")
-                        print(f"{pokemonEscolhido} foi adicionado ao seu time.")
+
+                    self._timepokemon.append(novoPokemon)
+
+                    print("")
+                    print(f"{novoPokemon._nomePokemon} foi adicionado ao seu time.")
+            
                 
-                    adicionarAoTime()
 
-                    def adicionarAoTimeJson():
+                    with open("Pokemon/timePokemon.json", 'r') as timePokemonJson:
+                        timeJson = json.load(timePokemonJson)
 
-                        with open("Pokemon/timePokemon.json", 'w') as timePokemonJson:
-                            json.dump(self._timepokemon, timePokemonJson, indent=2)
+                        timeJson.append(novoPokemon.gerarDicionario())
 
-                    adicionarAoTimeJson()
+                    with open("Pokemon/timePokemon.json", 'w') as timePokemonJson:
+                
+                        json.dump(timeJson, timePokemonJson, indent=2)
 
                     break
+
+                    
+
+                    
             
                 elif adicionar == "n":    
                     print(f"{pokemonEscolhido} foi descartado.")

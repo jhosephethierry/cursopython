@@ -1,34 +1,6 @@
 [
   {
     "Nome": [
-      "Pikachu"
-    ],
-    "Tipo": [
-      "Agua"
-    ],
-    "Ataque": [
-      1000
-    ],
-    "Defesa": [
-      300
-    ]
-  },
-  {
-    "Nome": [
-      "Pikachu"
-    ],
-    "Tipo": [
-      "Agua"
-    ],
-    "Ataque": [
-      1000
-    ],
-    "Defesa": [
-      300
-    ]
-  },
-  {
-    "Nome": [
       "Charmander"
     ],
     "Tipo": [
@@ -39,6 +11,48 @@
     ],
     "Defesa": [
       300
+    ]
+  },
+  {
+    "Nome": [
+      "Pikachu"
+    ],
+    "Tipo": [
+      "Agua"
+    ],
+    "Ataque": [
+      1000
+    ],
+    "Defesa": [
+      1000
+    ]
+  },
+  {
+    "Nome": [
+      "Charizard"
+    ],
+    "Tipo": [
+      "Fogo"
+    ],
+    "Ataque": [
+      3000
+    ],
+    "Defesa": [
+      2000
+    ]
+  },
+  {
+    "Nome": [
+      "Charmilion"
+    ],
+    "Tipo": [
+      "Fogo"
+    ],
+    "Ataque": [
+      2000
+    ],
+    "Defesa": [
+      2000
     ]
   }
 ]

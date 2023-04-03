@@ -185,31 +185,81 @@ class Treinador:
 
     def mostrarTimePokemon(self):
         
-        for r in range(len(self._timepokemon)):
-            print(f"{r+1}. {self._timepokemon[r]}")
+        def carregarTimePokemonJson():
+
+            with open("Pokemon/timePokemon.json", 'r') as timePokemonJson:
+                timepokemon = json.load(timePokemonJson)
+                
+                return timepokemon
+        
+        carregarTimePokemonJson()
+
+        def mostrarTimePokemon():
+                
+                listamundopokemon = carregarTimePokemonJson()
+
+                print("Esse e o mundo pokemon")
+
+                for pokemons in listamundopokemon:
+
+                    print(f'{pokemons["Nome"]} | {pokemons["Tipo"]} | {pokemons["Ataque"]} | {pokemons["Defesa"]}')
+                
+                print("")
+
+        mostrarTimePokemon()
 
     def mostrarMundoPokemon(self):
 
-        with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
-            mundopokemon = json.load(mundoPokemonJson)
-            for r in range(len(mundopokemon)):
-                print(f"{r+1}. {mundopokemon[r]}")
+        def carregarMundoPokemonJson():
 
-        return mundopokemon
+            with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
+                mundopokemon = json.load(mundoPokemonJson)
+                
+                return mundopokemon
+        
+        carregarMundoPokemonJson()
+
+        def mostrarMundoPokemon():
+                
+                listamundopokemon = carregarMundoPokemonJson()
+
+                print("Esse e o mundo pokemon")
+
+                for pokemons in listamundopokemon:
+
+                    print(f'{pokemons["Nome"]} | {pokemons["Tipo"]} | {pokemons["Ataque"]} | {pokemons["Defesa"]}')
+                
+                print("")
+
+        mostrarMundoPokemon()
     
     def capturarPokemon(self):
+            
+        def carregarMundoPokemonJson():
 
-        with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
-            mundopokemon = json.load(mundoPokemonJson)
-            print("Esse e o mundo pokemon")
-            print(mundopokemon)
+            with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
+                mundopokemon = json.load(mundoPokemonJson)
+                
+                return mundopokemon
+        
+        carregarMundoPokemonJson()
+   
+        listamundopokemon = carregarMundoPokemonJson()
+
+        print("Esse e o mundo pokemon")
+
+        for pokemons in listamundopokemon:
+
+            print(f'{pokemons["Nome"]} | {pokemons["Tipo"]} | {pokemons["Ataque"]} | {pokemons["Defesa"]}')
+                
+        print("")        
 
         pokemonCapturado = input("Escreva o nome do pokemon que voce quer capturar. ")
 
-        if pokemonCapturado == "":
-            print("Opção Inválida! Tente novamente.")
 
-        for pokemonCapturado in mundopokemon:
+        
+
+        for pokemonCapturado in listamundopokemon:
 
             print(f"Voce escolheu {pokemonCapturado}.")
             adicionar = input("Vamos adicionar ao seu time? s ou n?  ")
@@ -221,6 +271,8 @@ class Treinador:
 
                     print("")
                     print(f"{pokemonCapturado} foi adicionado ao seu time.")
+                
+                adicionarAoTime()
 
                 def adicionarAoTimeJson():
 
@@ -229,11 +281,14 @@ class Treinador:
 
                 adicionarAoTimeJson()
             
-        if adicionar == "n":    
-            print(f"{pokemonCapturado} foi descartado.")
-
-        adicionarAoTime()
+            elif adicionar == "n":    
+                print(f"{pokemonCapturado} foi descartado.")
                 
+                break
+        
+        if pokemonCapturado not in listamundopokemon:
+            print("Opção Inválida! Tente novamente.")
+                               
 
 # Subclasses Treinador
 class Jogador(Treinador):

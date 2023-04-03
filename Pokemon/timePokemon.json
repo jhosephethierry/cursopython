@@ -1,16 +1,16 @@
 [
   {
     "Nome": [
-      "Charmander"
+      "Charmilion"
     ],
     "Tipo": [
       "Fogo"
     ],
     "Ataque": [
-      1000
+      3000
     ],
     "Defesa": [
-      300
+      2000
     ]
   }
 ]

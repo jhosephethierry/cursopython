@@ -1,34 +1,6 @@
 [
   {
     "Nome": [
-      "Charmander"
-    ],
-    "Tipo": [
-      "Fogo"
-    ],
-    "Ataque": [
-      1000
-    ],
-    "Defesa": [
-      300
-    ]
-  },
-  {
-    "Nome": [
-      "Pikachu"
-    ],
-    "Tipo": [
-      "Agua"
-    ],
-    "Ataque": [
-      1000
-    ],
-    "Defesa": [
-      1000
-    ]
-  },
-  {
-    "Nome": [
       "Charizard"
     ],
     "Tipo": [
@@ -43,16 +15,16 @@
   },
   {
     "Nome": [
-      "Charmilion"
+      "Pikachu"
     ],
     "Tipo": [
-      "Fogo"
+      "Agua"
     ],
     "Ataque": [
-      2000
+      1000
     ],
     "Defesa": [
-      2000
+      1000
     ]
   }
 ]

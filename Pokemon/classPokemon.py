@@ -17,6 +17,8 @@ class Pokemon:
     
     def batalhar(self,oponente):
 
+        self._forcapokemon = forcapokemon
+
         ataqueAtual = 0
         defesaAtual = 0
 
@@ -120,18 +122,7 @@ class PokemonAgua(Pokemon):
 
         self._tipoPokemon = "Agua"
         
-        if pokemonOponente == "Terra":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
-        elif pokemonOponente == "Agua":
-            self._ataque = self._ataque 
-            self._defesa = self._defesa
-        elif pokemonOponente == "Ar":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
-        elif pokemonOponente == "Fogo":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+       
         
 class PokemonAr(Pokemon):
 
@@ -140,18 +131,7 @@ class PokemonAr(Pokemon):
 
         self._tipoPokemon = "Ar"
 
-        if pokemonOponente == "Terra":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
-        elif pokemonOponente == "Agua":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
-        elif pokemonOponente == "Ar":
-            self._ataque = self._ataque 
-            self._defesa = self._defesa
-        elif pokemonOponente == "Fogo":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
+       
 
 class PokemonFogo(Pokemon):
 
@@ -159,19 +139,6 @@ class PokemonFogo(Pokemon):
         super().__init__(nomePokemon, tipoPokemon, ataque, defesa)
 
         self._tipoPokemon = "Fogo"
-
-        if pokemonOponente == "Terra":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
-        elif pokemonOponente == "Agua":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
-        elif pokemonOponente == "Ar":
-            self._ataque = self._ataque * 0.10
-            self._defesa = self._defesa * 0.10
-        elif pokemonOponente == "Fogo":
-            self._ataque = self._ataque
-            self._defesa = self._defesa
 
 
 

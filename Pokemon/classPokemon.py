@@ -19,23 +19,88 @@ class Pokemon:
 
         ataqueAtual = 0
         defesaAtual = 0
+
+        forcapokemon = ataqueAtual + defesaAtual
+
+        if self._tipoPokemon == "Terra":
+
+            match forcapokemon:
+
+                case "Terra":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque)
+                    oponente._tipoPokemon(defesaAtual = self._defesa)
+                
+                case "Agua":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+                case "Ar":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+                case "Fogo":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+        elif self._tipoPokemon == "Agua":
+
+            match forcapokemon:
+
+                case "Terra":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque)
+                    oponente._tipoPokemon(defesaAtual = self._defesa)
+                
+                case "Agua":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+                case "Ar":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+                case "Fogo":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
         
-        if oponente._tipoPokemon == "Terra":
-            ataqueAtual = self._ataque 
-            defesaAtual = self._defesa
-        elif oponente._tipoPokemon == "Agua":
-            ataqueAtual = self._ataque * 0.5
-            defesaAtual = self._defesa * 0.5
-        elif oponente._tipoPokemon == "Ar":
-            ataqueAtual = self._ataque * 0.5
-            defesaAtual = self._defesa * 2
-        elif oponente._tipoPokemon == "Fogo":
-            ataqueAtual = self._ataque * 2
-            defesaAtual = self._defesa * 0.5
+        elif self._tipoPokemon == "Ar":
 
-        if ataqueAtual+defesaAtual > oponente._ataque + oponente._defesa:
-            print("Eu ganho")
+            match forcapokemon:
 
+                case "Terra":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque)
+                    oponente._tipoPokemon(defesaAtual = self._defesa)
+                
+                case "Agua":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+                case "Ar":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+                case "Fogo":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+        
+        elif self._tipoPokemon == "Fogo":
+
+            match forcapokemon:
+
+                case "Terra":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque)
+                    oponente._tipoPokemon(defesaAtual = self._defesa)
+                
+                case "Agua":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+                case "Ar":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
+
+                case "Fogo":
+                    oponente._tipoPokemon(ataqueAtual = self._ataque * 0.5)
+                    oponente._tipoPokemon(defesaAtual = self._defesa * 0.5)
 
 
 # Subclasses Pokemon

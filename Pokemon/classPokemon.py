@@ -18,6 +18,7 @@ class Pokemon:
     def batalhar(self,oponente):
 
         self._forcapokemon = forcapokemon
+        self._forcapokemonoponente = forcapokemon
 
         ataqueAtual = 0
         defesaAtual = 0
@@ -303,13 +304,12 @@ class Treinador:
         mostrarMundoPokemon()
     
     def capturarPokemon(self):
+
+        
             
         with open("Pokemon/mundoPokemon.json", 'r') as mundoPokemonJson:
             mundopokemon = json.load(mundoPokemonJson)
             
-   
-        
-
         print("Esse e o mundo pokemon")
 
         for pokemons in mundopokemon:

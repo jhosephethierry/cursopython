@@ -1,16 +1,30 @@
 [
   {
     "Nome": [
-      "Charmilion"
+      "Pikachu"
     ],
     "Tipo": [
-      "Fogo"
+      "Ar"
     ],
     "Ataque": [
-      3000
+      1000
     ],
     "Defesa": [
-      2000
+      1000
+    ]
+  },
+  {
+    "Nome": [
+      "Bulbassaur"
+    ],
+    "Tipo": [
+      "Terra"
+    ],
+    "Ataque": [
+      1000
+    ],
+    "Defesa": [
+      1000
     ]
   }
 ]

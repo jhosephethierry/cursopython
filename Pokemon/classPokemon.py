@@ -207,11 +207,11 @@ class Treinador:
 
         def mostrarTimePokemon():
                 
-                listamundopokemon = carregarTimePokemonJson()
+                timepokemon = carregarTimePokemonJson()
 
                 print("Esse e seu time pokemon")
 
-                for pokemons in listamundopokemon:
+                for pokemons in timepokemon:
 
                     print(f'{pokemons["Nome"]} | {pokemons["Tipo"]} | {pokemons["Ataque"]} | {pokemons["Defesa"]}')
                 

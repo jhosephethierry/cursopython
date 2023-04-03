@@ -5,7 +5,7 @@ treinador = classPokemon.Treinador()
 def menuTreinador():
 
     opcao = ""
-    while(opcao != '6'):
+    while(opcao != '7'):
         print("Escolha uma opcao no menu.")
         opcao = input("1. Criar Treinador | 2. Criar Pokemon | 3. Mostrar Time | 4. Mostrar Mundo Pokemon | 5. Capturar Pokemons | 6. Batalhar | 7. Sair : ")
         
@@ -43,7 +43,7 @@ def menuTreinador():
         elif opcao == '6':
             print("Vamos batalhar")
             print("")
-            treinador.capturarPokemon()
+            treinador.mostrarTimePokemon()
             print("") 
 
         elif opcao == '7':

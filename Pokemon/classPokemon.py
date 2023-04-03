@@ -9,6 +9,7 @@ class Pokemon:
         self._tipoPokemon = tipoPokemon
         self._ataque = ataque
         self._defesa = defesa
+        self._forcadecombate = self._ataque + self._defesa
     
     def gerarDicionario(self):
         
@@ -367,17 +368,11 @@ class Treinador:
 
                     break
 
-                    
-
-                    
-            
+          
                 elif adicionar == "n":    
                     print(f"{pokemonEscolhido} foi descartado.")
                 
                     break
-
-        
-                               
 
 # Subclasses Treinador
 class Jogador(Treinador):

@@ -28,5 +28,17 @@
     "Tipo": "Fogo",
     "Ataque": 1000,
     "Defesa": 1000
+  },
+  {
+    "Nome": "Charizard",
+    "Tipo": "Fogo",
+    "Ataque": 3000,
+    "Defesa": 2000
+  },
+  {
+    "Nome": "Charizard",
+    "Tipo": "Fogo",
+    "Ataque": 3000,
+    "Defesa": 2000
   }
 ]

@@ -16,7 +16,7 @@ class Pokemon:
         return pokeDicionario
     
     def batalhar(self,oponente):
-        
+
         ataqueAtual = 0
         defesaAtual = 0
         
@@ -25,13 +25,13 @@ class Pokemon:
             defesaAtual = self._defesa
         elif oponente._tipoPokemon == "Agua":
             ataqueAtual = self._ataque * 0.5
-            self._defesa = self._defesa * 0.5
+            defesaAtual = self._defesa * 0.5
         elif oponente._tipoPokemon == "Ar":
-            self._ataque = self._ataque * 0.5
-            self._defesa = self._defesa * 2
+            ataqueAtual = self._ataque * 0.5
+            defesaAtual = self._defesa * 2
         elif oponente._tipoPokemon == "Fogo":
-            self._ataque = self._ataque * 2
-            self._defesa = self._defesa * 0.5
+            ataqueAtual = self._ataque * 2
+            defesaAtual = self._defesa * 0.5
 
         if ataqueAtual+defesaAtual > oponente._ataque + oponente._defesa:
             print("Eu ganho")

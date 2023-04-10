@@ -1,0 +1,23 @@
+{
+    "Funcionario" : [
+
+        {"Id_Funcionario": "001", "Nome_Funcionario": "José", "CPF_Funcionario": "11111111111", "Id_Departamento": "01"},
+        {"Id_Funcionario": "002", "Nome_Funcionario": "Rubens", "CPF_Funcionario": "22222222222", "Id_Departamento": "02"},
+        {"Id_Funcionario": "003", "Nome_Funcionario": "Junior", "CPF_Funcionario": "33333333333", "Id_Departamento": "01"},
+        {"Id_Funcionario": "004", "Nome_Funcionario": "Roger", "CPF_Funcionario": "44444444444", "Id_Departamento": "02"},
+        {"Id_Funcionario": "005", "Nome_Funcionario": "Santos", "CPF_Funcionario": "55555555555", "Id_Departamento": "01"},
+        {"Id_Funcionario": "006", "Nome_Funcionario": "Carlos", "CPF_Funcionario": "66666666666", "Id_Departamento": "02"},
+        {"Id_Funcionario": "007", "Nome_Funcionario": "Josué", "CPF_Funcionario": "77777777777", "Id_Departamento": "01"},
+        {"Id_Funcionario": "008", "Nome_Funcionario": "Matias", "CPF_Funcionario": "88888888888", "Id_Departamento": "02"},
+        {"Id_Funcionario": "009", "Nome_Funcionario": "Lopes", "CPF_Funcionario": "99999999999", "Id_Departamento": "01"},
+        {"Id_Funcionario": "010", "Nome_Funcionario": "Lucas", "CPF_Funcionario": "12121212121", "Id_Departamento": "02"}
+
+    ],
+
+    "Departamento" : [
+
+        {"Id_Departamento": "01", "Nome_Departamento": "Vendas", "Sigla_Departamento": "VEN"},
+        {"Id_Departamento": "02", "Nome_Departamento": "Compras", "Sigla_Departamento": "COM"}
+
+    ]
+}

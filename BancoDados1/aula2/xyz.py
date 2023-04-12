@@ -16,7 +16,7 @@ def ListaFuncionarios():
             
             print(f'{i}. Id - {Funcionarios["ID_Funcionario"]} | Nome - {Funcionarios["Nome_Funcionario"]} | Cpf - {Funcionarios["CPF_Funcionario"]} | Telefone - {Funcionarios["Fone_Funcionario"]} | Departamento - {Funcionarios["ID_Departamento"]}')
                   
-ListaFuncionarios()
+
 
 def ListaDepartamentos():
 
@@ -28,7 +28,7 @@ def ListaDepartamentos():
             
             print(f'Id - {Departamentos["ID_Departamento"]} | Nome - {Departamentos["Nome_Departamento"]} | Sigla - {Departamentos["Sig_Departamento"]}')
 
-ListaDepartamentos()
+
 
 def ListaFuncionariosDepartamento():
 
@@ -52,4 +52,3 @@ def ListaFuncionariosDepartamento():
 
     print("")
                   
-ListaFuncionariosDepartamento()

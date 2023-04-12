@@ -12,9 +12,9 @@ def ListaFuncionarios():
     print("Estes sao os funcionarios da XYZ")
     print("")
 
-    for Funcionarios in xyzFuncionarios:
+    for i,Funcionarios in enumerate(xyzFuncionarios):
             
-            print(f'Id - {Funcionarios["ID_Funcionario"]} | Nome - {Funcionarios["Nome_Funcionario"]} | Cpf - {Funcionarios["CPF_Funcionario"]} | Telefone - {Funcionarios["Fone_Funcionario"]} | Departamento - {Funcionarios["ID_Departamento"]}')
+            print(f'{i}. Id - {Funcionarios["ID_Funcionario"]} | Nome - {Funcionarios["Nome_Funcionario"]} | Cpf - {Funcionarios["CPF_Funcionario"]} | Telefone - {Funcionarios["Fone_Funcionario"]} | Departamento - {Funcionarios["ID_Departamento"]}')
                   
 ListaFuncionarios()
 
@@ -36,19 +36,19 @@ def ListaFuncionariosDepartamento():
     print("Estes sao os vendedores da XYZ")
     print("")
 
-    for Funcionarios in xyzFuncionarios:
+    for i,Funcionarios in enumerate(xyzFuncionarios):
 
         if Funcionarios["ID_Departamento"] == "1":
-            print(f'{Funcionarios["Nome_Funcionario"]}')
+            print(f'{i}. {Funcionarios["Nome_Funcionario"]}')
 
     print("")
     print("Estes sao os compradores da XYZ")
     print("")
 
-    for Funcionarios in xyzFuncionarios:
+    for i,Funcionarios in enumerate(xyzFuncionarios):
 
         if Funcionarios["ID_Departamento"] == "2":
-            print(f'{Funcionarios["Nome_Funcionario"]}')
+            print(f'{i}. {Funcionarios["Nome_Funcionario"]}')
 
     print("")
                   

@@ -7,7 +7,7 @@ def menuXYZ():
         print("")
         print("Escolha uma opcao no menu.")
         print("")
-        opcao = input("1. Ver lista de Funcionarios | 2. Ver Lista de Departamentos | 3. Ver Lista por Departamento | 5. Sair: ")
+        opcao = input("1. Ver lista de Funcionarios | 2. Ver Lista de Departamentos | 3. Ver Lista por Departamento | 4. Sair: ")
         
         if opcao == '1':
             

@@ -1,0 +1,22 @@
+{
+    "Funcionario" : [
+
+        {"ID_Funcionario": "1", "Nome_Funcionario": "Kauan", "CPF_Funcionario": "0101010101", "Fone_Funcionario": "123456781", "ID_Departamento": "1"},
+        {"ID_Funcionario": "2", "Nome_Funcionario": "Maria", "CPF_Funcionario": "0202020202", "Fone_Funcionario": "123456782", "ID_Departamento": "2"},
+        {"ID_Funcionario": "3", "Nome_Funcionario": "João", "CPF_Funcionario": "0303030303", "Fone_Funcionario": "123456783", "ID_Departamento": "1"},
+        {"ID_Funcionario": "4", "Nome_Funcionario": "Carlos", "CPF_Funcionario": "0404040404", "Fone_Funcionario": "123456784", "ID_Departamento": "2"},
+        {"ID_Funcionario": "5", "Nome_Funcionario": "Phonsy", "CPF_Funcionario": "0505050505", "Fone_Funcionario": "123456785", "ID_Departamento": "1"},
+        {"ID_Funcionario": "6", "Nome_Funcionario": "Clara", "CPF_Funcionario": "0606060606", "Fone_Funcionario": "123456786", "ID_Departamento": "2"},
+        {"ID_Funcionario": "7", "Nome_Funcionario": "Marcos", "CPF_Funcionario": "0707070707", "Fone_Funcionario": "123456787", "ID_Departamento": "1"},
+        {"ID_Funcionario": "8", "Nome_Funcionario": "Luna", "CPF_Funcionario": "0808080808", "Fone_Funcionario": "123456788", "ID_Departamento": "2"}
+
+    ],
+
+    "Departamento": [
+
+        {"ID_Departamento": "1", "Nome_Departamento": "Vendas", "Sig_Departamento": "VEND"},
+        {"ID_Departamento": "2", "Nome_Departamento": "Compras", "Sig_Departamento": "COMPR"}
+
+    ]
+
+}

@@ -29,3 +29,27 @@ def ListaDepartamentos():
             print(f'Id - {Departamentos["ID_Departamento"]} | Nome - {Departamentos["Nome_Departamento"]} | Sigla - {Departamentos["Sig_Departamento"]}')
 
 ListaDepartamentos()
+
+def ListaFuncionariosDepartamento():
+
+    print("")
+    print("Estes sao os vendedores da XYZ")
+    print("")
+
+    for Funcionarios in xyzFuncionarios:
+
+        if Funcionarios["ID_Departamento"] == "1":
+            print(f'{Funcionarios["Nome_Funcionario"]}')
+
+    print("")
+    print("Estes sao os compradores da XYZ")
+    print("")
+
+    for Funcionarios in xyzFuncionarios:
+
+        if Funcionarios["ID_Departamento"] == "2":
+            print(f'{Funcionarios["Nome_Funcionario"]}')
+
+    print("")
+                  
+ListaFuncionariosDepartamento()

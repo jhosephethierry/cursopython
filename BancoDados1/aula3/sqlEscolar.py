@@ -46,4 +46,11 @@ VALUES(DEFAULT, 'José', '11111111111', DEFAULT, DEFAULT, 2020)
 
 conn.commit()
 
+cursor.execute('''SELECT * FROM "Alunos"''')
+
+# print(cursor.fetchall())
+
+for aluno in cursor.fetchall():
+    print(f"{aluno[0]} - {aluno[1]}")
+
 conn.close()

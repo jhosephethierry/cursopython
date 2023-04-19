@@ -85,19 +85,81 @@ def verFuncionarioEspecifico(id):
 
     cursor.execute(f'''
     Select * from "Funcionário"
-    WHERE "Id_Funcionário" = '{id}'
+    WHERE "Id" = '{id}'
     ''')
 
     funcionario = cursor.fetchone()
 
     if funcionario:
+
+        cursor.execute(f'''
+        SELECT * FROM "Departamentos"
+        WHERE "Id" = '{funcionario[4]}'
+        ''')
+
+        departamento = cursor.fetchone()
+
+        if departamento:
+            departamentoNome = departamento[1]
+        else:
+            departamentoNome = "Não encontrado!"
+
         print(f'''
         ID: {funcionario[0]}
         Nome: {funcionario[1]}
-        Salário: R$ {funcionario[2]}
-        Cargo: R$ {funcionario[3]}
-        Departamento: {funcionario[4]}
+        Salário: {funcionario[2]}
+        Cargo: {funcionario[3]}
+        Departamento: {departamentoNome}
         ''')
+
+        print('''
+        Escolha uma opção:
+        1. Ver Departamento
+        2. Atualizar Funcionário
+        0. Voltar para o menu
+        
+        ''')
+
+        op = input("Digite a opção desejada:")
+        match op:
+            case "1":
+                if departamento:
+                    verDepartamento = input("Deseja ver o departamento?(S/N)")
+                    
+                    if verDepartamento.upper() == "S":
+                        verDepartamentoEspecifico(funcionario[4])
+                    else:
+                        print("Voltando para o Menu...")
+                else:
+                    print("Departamento não existe! Voltando para o Menu Principal...")
+
+            case "2":
+
+                print("Você está alterando um usuário. Deixe vazio para manter a informação.")
+                novoFuncionarioNome = input("Digite o novo nome do funcionário: ")
+                novoFuncionarioSalario = input("Digite o novo salário do funcionário: ")
+                novoFuncionarioCargo = input("Digite o novo cargo do funcionário: ")
+                novoFuncionarioIdDepartamento = input("Digite o novo id de departamento do funcionário: ")
+
+                # campos = [novoFuncionarioNome, novoFuncionarioSalario, novoFuncionarioCargo, novoFuncionarioIdDepartamento]
+
+                # for i,campo in enumerate(campos):
+                #     if campo == '':
+                #         campos[i] = funcionario[i+1]
+
+                cursor.execute(f'''
+                UPDATE "Funcionário"
+                SET
+                "Nome" = '{novoFuncionarioNome}',
+                "Salário" = '{novoFuncionarioSalario}',
+                "Cargo" = '{novoFuncionarioCargo}',
+                "Id_Dept" = '{novoFuncionarioIdDepartamento}'
+                WHERE
+                "Id" = '{funcionario[0]}'
+                ''')
+
+                conn.commit()
+
 
     else:
         print("Funcionário não encontrado.")
@@ -106,16 +168,39 @@ def verDepartamentoEspecifico(id):
 
     cursor.execute(f'''
     Select * from "Departamentos"
-    WHERE "Id_Departamento" = '{id}'
+    WHERE "Id" = '{id}'
     ''')
 
     departamento = cursor.fetchone()
 
     if departamento:
+
         print(f'''
         ID: {departamento[0]}
         Nome: {departamento[1]}
         ''')
+
+        print("Lista de funcionários: ")
+
+        cursor.execute(f'''
+        SELECT * FROM "Funcionário"
+        WHERE "Id_Dept" = {departamento[0]}
+        ORDER BY "Id" ASC
+        ''')
+        listaFuncionarios = cursor.fetchall()
+
+        print("ID - Nome")
+
+        for funcionario in listaFuncionarios:
+            print(f"{funcionario[0]} - {funcionario[1]}")
+
+        idEscolhido = input("Digite o id de um funcionário que deseja ver mais informações:(0 = Voltar) ")
+
+        if idEscolhido != "0":
+            verFuncionarioEspecifico(idEscolhido)
+        else:
+            print("Voltando para o menu principal.")
+
 
     else:
         print("Departamento não encontrado.")
@@ -125,8 +210,8 @@ def verDepartamentoEspecifico(id):
 def verFuncionarios():
 
     cursor.execute('''
-                SELECT * FROM "Funcionários"
-                ORDER BY "Id_Funcionário" ASC
+                SELECT * FROM "Funcionário"
+                ORDER BY "Id" ASC
                 ''')
 
     listaFuncionarios = cursor.fetchall()
@@ -146,7 +231,7 @@ def verDepartamentos():
 
     cursor.execute('''
                 SELECT * FROM "Departamentos"
-                ORDER BY "Id_Departamento" ASC
+                ORDER BY "Id" ASC
                 ''')
 
     listaDepartamentos = cursor.fetchall()
@@ -170,7 +255,7 @@ def inserirFuncionario():
     novoFuncionarioIdDepartamento = input("Digite o departamento do novo funcionário: ")
 
     cursor.execute(f'''
-    INSERT INTO "Funcionários"
+    INSERT INTO "Funcionário"
     Values(default, '{novoFuncionarioNome}', '{novoFuncionarioSalario}', '{novoFuncionarioCargo}', '{novoFuncionarioIdDepartamento}')
     
     ''')
@@ -197,7 +282,8 @@ def inserirDepartamento():
 
 
 try:
-    conn = psycopg2.connect(dbname="EmpresaXyz", host="localhost", port="5432", user="postgres", password="postgres")
+    conn = psycopg2.connect(dbname="XYZ Soluções", host="localhost",
+                            port="5432", user="postgres", password="postgres")
 
     cursor = conn.cursor()
 
@@ -236,6 +322,7 @@ while True:
 
             case "4":
                 inserirDepartamento()
+
 
             case "0":
                 print("Saindo do programa...")

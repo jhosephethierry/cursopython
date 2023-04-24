@@ -40,6 +40,26 @@ import psycopg2
     
 #     return sql
 
+def criarDepartamento():
+
+    sql = (f'''
+    INSERT INTO "Departamentos"
+    Values(default, 'Vendas'), (default, 'Tecnologia'), (default, 'Compras')
+    
+    ''')
+
+    return sql
+
+def criarFuncionario():
+
+    sql = (f'''
+    INSERT INTO "Funcionarios"
+    Values(default, 'José', '111111111', '5000', 1), (default, 'Josué', '4444444', '7000', 1), (default, 'Lucas', '2222222', '6000', 2)
+    
+    ''')
+
+    return sql
+
 
 # try:
 
@@ -76,16 +96,13 @@ try:
 
     cursor = conn.cursor()
 
-    cursor.execute(criarTabelaDepartamento())
-
-    conn.commit()
-
-    cursor.execute(criarTabelaFuncionario())
+    cursor.execute(criarFuncionario())
 
     conn.commit()
 
     print("Conectado")
 
+    cursor.close()
     conn.close()
 
     print("Desconectado")
@@ -95,9 +112,3 @@ except(Exception, psycopg2.Error) as error:
 
 
     print("Ocorreu um erro,", error)
-
-cursor.execute(f'''
-    INSERT INTO "Funcionário"
-    Values(default, '{novoFuncionarioNome}', '{novoFuncionarioSalario}', '{novoFuncionarioCargo}', '{novoFuncionarioIdDepartamento}')
-    
-    ''')

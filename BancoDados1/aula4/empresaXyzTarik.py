@@ -39,6 +39,24 @@ import psycopg2
 #     '''
 #     return sql
 
+# def criarTabelaFuncionarioComFK():
+#     sql = '''
+#     CREATE TABLE "Funcionário"(
+#     "Id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+#     "Nome" varchar(255) NOT NULL,
+#     "Salário" money NOT NULL default 0,
+#     "Cargo" varchar(255) NOT NULL default 'Autônomo',
+#     "Id_Dept" int NOT NULL default 1,
+#      CONSTRAINT fk_departamento
+#           FOREIGN KEY("Id_Dept")
+#           REFERENCES "Departamentos"("Id")
+#           ON DELETE SET DEFAULT
+#           ON UPDATE NO ACTION
+
+#     )
+#     '''
+#     return sql
+
 # def criarTabelaDepartamento():
 
 #     sql = '''
@@ -116,6 +134,7 @@ def verFuncionarioEspecifico(id):
         Escolha uma opção:
         1. Ver Departamento
         2. Atualizar Funcionário
+        3. Remover Funcionário
         0. Voltar para o menu
         
         ''')
@@ -159,6 +178,17 @@ def verFuncionarioEspecifico(id):
                 ''')
 
                 conn.commit()
+            case "3":
+                confirmacao = input("Deseja realmente remover este funcionário?(S/N)")
+
+                if confirmacao.upper() == "S":
+                    cursor.execute(f'''
+                    DELETE FROM "Funcionário"
+                    WHERE "Id" = '{id}'
+                    
+                    ''')
+                    print("Funcionário removido.")
+                    conn.commit()
 
 
     else:

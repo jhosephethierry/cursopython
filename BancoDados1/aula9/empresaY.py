@@ -67,3 +67,37 @@ import psycopg2
 
 
 #     print("Ocorreu um erro,", error)
+
+
+try:
+
+
+    conn = psycopg2.connect(dbname = "EmpresaY", host = "localhost", port = "5432", user = "postgres", password = "postgres")
+
+    cursor = conn.cursor()
+
+    cursor.execute(criarTabelaDepartamento())
+
+    conn.commit()
+
+    cursor.execute(criarTabelaFuncionario())
+
+    conn.commit()
+
+    print("Conectado")
+
+    conn.close()
+
+    print("Desconectado")
+
+
+except(Exception, psycopg2.Error) as error:
+
+
+    print("Ocorreu um erro,", error)
+
+cursor.execute(f'''
+    INSERT INTO "Funcionário"
+    Values(default, '{novoFuncionarioNome}', '{novoFuncionarioSalario}', '{novoFuncionarioCargo}', '{novoFuncionarioIdDepartamento}')
+    
+    ''')

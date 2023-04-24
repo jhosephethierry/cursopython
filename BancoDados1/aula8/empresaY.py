@@ -1,27 +1,27 @@
 import psycopg2
 
 
-def criarTabelaFuncionario():
+# def criarTabelaFuncionario():
 
     
-    sql = ('''
+#     sql = ('''
 
-    CREATE TABLE "Funcionarios"(
+#     CREATE TABLE "Funcionarios"(
 
-    "Func_id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "Func_nome" varchar(255),
-    "Func_cpf" char(11) UNIQUE NOT NULL,
-    "Func_salario" money,
-    "Dept_id"  int,
-    CONSTRAINT fk_departamento
-    FOREIGN KEY ("Dept_id")
-    REFERENCES "Departamentos"("Dept_id")
+#     "Func_id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+#     "Func_nome" varchar(255),
+#     "Func_cpf" char(11) UNIQUE NOT NULL,
+#     "Func_salario" money,
+#     "Dept_id"  int,
+#     CONSTRAINT fk_departamento
+#     FOREIGN KEY ("Dept_id")
+#     REFERENCES "Departamentos"("Dept_id")
 
-    )
+#     )
 
-    ''')
+#     ''')
     
-    return sql
+#     return sql
 
 
 # def criarTabelaDepartamento():
@@ -41,29 +41,29 @@ def criarTabelaFuncionario():
 #     return sql
 
 
-try:
+# try:
 
 
-    conn = psycopg2.connect(dbname = "EmpresaY", host = "localhost", port = "5432", user = "postgres", password = "postgres")
+#     conn = psycopg2.connect(dbname = "EmpresaY", host = "localhost", port = "5432", user = "postgres", password = "postgres")
 
-    cursor = conn.cursor()
+#     cursor = conn.cursor()
 
-    #cursor.execute(criarTabelaDepartamento())
+#     cursor.execute(criarTabelaDepartamento())
 
-    conn.commit()
+#     conn.commit()
 
-    cursor.execute(criarTabelaFuncionario())
+#     cursor.execute(criarTabelaFuncionario())
 
-    conn.commit()
+#     conn.commit()
 
-    print("Conectado")
+#     print("Conectado")
 
-    conn.close()
+#     conn.close()
 
-    print("Desconectado")
-
-
-except(Exception, psycopg2.Error) as error:
+#     print("Desconectado")
 
 
-    print("Ocorreu um erro,", error)
+# except(Exception, psycopg2.Error) as error:
+
+
+#     print("Ocorreu um erro,", error)

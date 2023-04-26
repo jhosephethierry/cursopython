@@ -1,44 +1,44 @@
 import psycopg2
 
 
-# def criarTabelaFuncionario():
+def criarTabelaFuncionario():
 
     
-#     sql = ('''
+    sql = ('''
 
-#     CREATE TABLE "Funcionarios"(
+    CREATE TABLE "Funcionarios"(
 
-#     "Func_id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-#     "Func_nome" varchar(255),
-#     "Func_cpf" char(11) UNIQUE NOT NULL,
-#     "Func_salario" money,
-#     "Dept_id"  int,
-#     CONSTRAINT fk_departamento
-#     FOREIGN KEY ("Dept_id")
-#     REFERENCES "Departamentos"("Dept_id")
+    "Func_id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "Func_nome" varchar(255),
+    "Func_cpf" char(11) UNIQUE NOT NULL,
+    "Func_salario" money,
+    "Dept_id"  int,
+    CONSTRAINT fk_departamento
+    FOREIGN KEY ("Dept_id")
+    REFERENCES "Departamentos"("Dept_id")
 
-#     )
+    )
 
-#     ''')
+    ''')
     
-#     return sql
+    return sql
 
 
-# def criarTabelaDepartamento():
+def criarTabelaDepartamento():
 
     
-#     sql = ('''
+    sql = ('''
 
-#     CREATE TABLE "Departamentos"(
+    CREATE TABLE "Departamentos"(
 
-#     "Dept_id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-#     "Dept_nome" varchar(255)
+    "Dept_id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "Dept_nome" varchar(255)
 
-#     )
+    )
 
-#     ''')
+    ''')
     
-#     return sql
+    return sql
 
 def criarDepartamento():
 

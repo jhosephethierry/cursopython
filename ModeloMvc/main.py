@@ -29,6 +29,19 @@ try:
 
     ''')
 
+    conexaoBanco.manipularBanco('''
+
+    CREATE TABLE "Compra"(
+
+    "Id_Compra" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "Quantidade_Produto" varchar(255),
+    "Preço_Produto" money DEFAULT 0,
+    "Estoque_Produto" int
+
+    )
+
+    ''')
+
 except(Exception, psycopg2.Error) as error:
         print("Ocorreu um erro", error)
 

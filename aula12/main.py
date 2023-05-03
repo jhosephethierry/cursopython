@@ -1,4 +1,5 @@
 from Controle.classConexao import Conexao
+import psycopg2
 
 
 def criarTabelas(con):

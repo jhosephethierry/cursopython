@@ -1,5 +1,4 @@
 from Controle.classConexao import Conexao
-import psycopg2
 
 
 def criarTabelas(con):
@@ -196,7 +195,8 @@ def cadastrarNovoAluguel():
     
 
 
-conexaoBanco = Conexao("Biblioteca", "localhost", "5432", "postgres", "postgres")
+conexaoBanco = Conexao("Biblioteca", "localhost",
+                       "5432", "postgres", "postgres")
 
 while True:
 

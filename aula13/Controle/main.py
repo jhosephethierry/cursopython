@@ -252,9 +252,9 @@ def verMenuLivros():
             case "2":
                 cadastrarNovoLivro()
             case "3":
-                atualizarLivro()
+                print(f"atualizarLivro()")
             case "4":
-                removerLivro()
+                print(f"removerLivro()")
             case "0":
                 print("Voltando ao menu principal...")
                 break
@@ -313,9 +313,9 @@ def verMenuAlugueis():
             case "2":
                 cadastrarNovoAluguel()
             case "3":
-                atualizarAluguel()
+                print(f"atualizarAluguel()")
             case "4":
-                removerAluguel()
+                print(f"removerAluguel()")
             case "0":
                 print("Voltando ao menu principal...")
                 break

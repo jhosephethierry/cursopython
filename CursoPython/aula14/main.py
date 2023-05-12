@@ -13,7 +13,7 @@
 # - Integrar o formulário com o banco de dados
 # - Criar um menu
 
-from customtkinter import * #pip install customtkinter
+from customtkinter import *
 
 app = CTk()
 app.title("Teste")

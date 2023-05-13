@@ -9,19 +9,67 @@ import psycopg2
 
 def visualizarClientes():
 
-    pass
+    clientes = Conexao.consultarBanco('''
+
+    SELECT * FROM "Clientes"
+    ORDER BY "ID" ASC
+
+    ''')
+
+    if clientes:
+
+        print("Estes são os clientes cadastrados.")
+
+        for cliente in clientes:
+            print(f"{cliente[0]} | {cliente[1]}")
+
+    else:
+        
+        print("Não há clientes cadastrados.")
 
 
 
 def visualizarProdutos():
 
-    pass
+    produtos = Conexao.consultarBanco('''
+
+    SELECT * FROM "Produtos"
+    ORDER BY "ID" ASC
+
+    ''')
+
+    if produtos:
+
+        print("Estes são os produtos cadastrados.")
+
+        for produto in produtos:
+            print(f"{produto[0]} | {produto[1]} | {produto[2]} | {produto[3]} | {produto[4]}")
+
+    else:
+        
+        print("Não há produtos cadastrados.")
 
 
 
 def visualizarPedidos():
-    
-    pass
+
+    pedidos = Conexao.consultarBanco('''
+
+    SELECT * FROM "Pedidos"
+    ORDER BY "ID" ASC
+
+    ''')
+
+    if pedidos:
+
+        print("Estes são os pedidos cadastrados.")
+
+        for pedido in pedidos:
+            print(f"{pedido[0]} | {pedido[1]} | {pedido[2]} | {pedido[3]} | {pedido[4]} | {pedido[5]}")
+
+    else:
+        
+        print("Não há pedidos cadastrados.")
 
 
 

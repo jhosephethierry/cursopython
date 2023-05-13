@@ -33,15 +33,3 @@ class Produto:
 
         return sql
     
-    def sqlVisualizarProduto(self):
-
-        sql = f'''
-
-        UPDATE "Produtos"
-        SET
-        "Nome" = '{self._nome}', "Peso" = '{self._peso}', "Preço" = '{self._preço}', "Estoque" = '{self._estoque}'
-        WHERE "Id" = {self._id}
-        
-        '''
-
-        return sql

@@ -8,8 +8,10 @@ def criarTabelas():
     conexaoBanco.manipularBanco('''
 
     CREATE TABLE "Clientes"(
+    
     "Id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "Nome" varchar(255) NOT NULL
+    
     )
     
     ''')
@@ -17,10 +19,13 @@ def criarTabelas():
     conexaoBanco.manipularBanco('''
 
     CREATE TABLE "Produtos"(
+    
     "Id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "Nome" varchar(255) NOT NULL,
+    "Peso" varchar(255) NOT NULL,
     "Preço" numeric(2) NOT NULL default 0,
     "Estoque" int NOT NULL default 0
+    
     )
     
     ''')
@@ -28,6 +33,7 @@ def criarTabelas():
     conexaoBanco.manipularBanco('''
 
     CREATE TABLE "Compras"(
+    
     "Id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "Id_Cliente" int,
     "Id_Produto" int,
@@ -38,7 +44,6 @@ def criarTabelas():
         FOREIGN KEY("Id_Cliente")
         REFERENCES "Clientes"("Id")
         ,
-
     CONSTRAINT fk_produto
         FOREIGN KEY("Id_Produto")
         REFERENCES "Produtos"("Id")

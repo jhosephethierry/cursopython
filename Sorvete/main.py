@@ -1,4 +1,4 @@
-from Modelo.classFuncoes import Funcoes
+from Modelo.classCliente import Cliente
 import psycopg2
 
 while True:

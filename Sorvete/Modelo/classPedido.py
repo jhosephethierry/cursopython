@@ -1,4 +1,4 @@
-class Compra:
+class Pedido:
     
     def __init__(self, id, idCliente, idProduto, quantidade, valorTotal, timestamp):
 
@@ -9,11 +9,11 @@ class Compra:
         self._valorTotal = valorTotal
         self._timestamp = timestamp
 
-    def sqlInserirCompra(self):
+    def sqlInserirPedido(self):
 
         sql = f'''
         
-        INSERT INTO "Compras"
+        INSERT INTO "Pedidos"
         VALUES(default, '{self._idCliente}', '{self._idProduto}', '{self._quantidade}', '{self._valorTotal}', default)
         
         '''

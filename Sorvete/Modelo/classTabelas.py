@@ -32,7 +32,7 @@ def criarTabelas():
 
     conexaoBanco.manipularBanco('''
 
-    CREATE TABLE "Compras"(
+    CREATE TABLE "Pedidos"(
     
     "Id" int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "Id_Cliente" int,

@@ -1,5 +1,4 @@
 from classConexao import Conexao
-
 from classCliente import Cliente
 from classProduto import Produto
 from classPedido import Pedido

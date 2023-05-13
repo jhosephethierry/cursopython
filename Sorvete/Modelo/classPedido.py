@@ -1,4 +1,3 @@
-from Controle.classConexao import Conexao
 
 class Pedido:
     

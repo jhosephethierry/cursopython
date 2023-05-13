@@ -1,4 +1,4 @@
-from Modelo.classCliente import Cliente
+import Modelo.Funcoes as Func
 import psycopg2
 
 while True:
@@ -23,22 +23,22 @@ while True:
         match op:
 
             case "1":
-                inserirCliente()
+                Func.inserirCliente()
             
             case "2":
-                inserirProduto()
+                Func.inserirProduto()
 
             case "3":
-                inserirPedido()
+                Func.inserirPedido()
 
             case "4":
-                visualizarClientes()
+                Func.visualizarClientes()
 
             case "5":
-                visualizarProdutos()
+                Func.visualizarProdutos()
 
             case "6":
-                visualizarPedidos()
+                Func.visualizarPedidos()
 
             case "0":
                 print("Saindo...")

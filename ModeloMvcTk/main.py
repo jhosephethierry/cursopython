@@ -62,6 +62,8 @@ def criarTabelas():
 
     print("Tabelas cadastradas!")
 
+criarTabelas()
+
 def cadastrarCliente():
     print("Cadastro de Cliente")
 
@@ -139,3 +141,5 @@ while True:
 
     except(Exception, psycopg2.Error) as error:
         print(error)
+
+

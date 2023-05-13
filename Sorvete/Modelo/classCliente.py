@@ -1,3 +1,5 @@
+from Controle.classConexao import Conexao
+
 class Cliente:
 
     def __init__(self, id, nome) -> None:
@@ -15,4 +17,15 @@ class Cliente:
         '''
 
         return sql
+    
+    def inserirCliente():
+
+        print("Cadastro de Cliente")
+
+        cliente = Cliente(None, input("Digite o nome do cliente. "))
+
+        Conexao.manipularBanco(cliente.sqlInserirCliente())
+
+        print("Novo cliente inserido com sucesso!")
+
     

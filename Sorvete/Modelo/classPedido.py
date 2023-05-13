@@ -1,3 +1,5 @@
+from Controle.classConexao import Conexao
+
 class Pedido:
     
     def __init__(self, id, idCliente, idProduto, quantidade, valorTotal, timestamp):
@@ -19,3 +21,9 @@ class Pedido:
         '''
 
         return sql
+
+    def inserirPedido():
+
+        print("Cadastro de Pedido")
+
+        pedido = Pedido(None, input("Digite o id do cliente. "), input("Digite o id do produto. "), input("Digite a quantidade. "), None, None)

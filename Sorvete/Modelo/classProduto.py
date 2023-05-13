@@ -1,3 +1,5 @@
+from Controle.classConexao import Conexao
+
 class Produto:
 
     def __init__(self, id, nome, peso, preço, estoque,) -> None:
@@ -31,3 +33,13 @@ class Produto:
         '''
 
         return sql
+    
+    def inserirProduto():
+
+        print("Cadastro de Produto")
+
+        produto = Produto(None, input("Digite o nome do produto. "), input("Digite o peso. "), input("Digite o preço. "), input("Digite o estoque. "))
+
+        Conexao.manipularBanco(produto.sqlInserirProduto())
+
+        print("Novo produto inserido com sucesso!")

@@ -53,3 +53,5 @@ def criarTabelas():
     ''')
 
     print("Tabelas cadastradas!")
+
+criarTabelas()

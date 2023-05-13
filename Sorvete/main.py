@@ -39,3 +39,4 @@ while True:
 
     except(Exception, psycopg2.Error) as error:
         print(error)
+        s

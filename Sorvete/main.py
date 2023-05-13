@@ -8,9 +8,12 @@ while True:
         
         Escolha uma opção no menu abaixo.
 
-            1. Inserir Novo Cliente
-            2. Inserir Novo Produto
-            3. Inserir Novo Pedido
+            1. Inserir Cliente
+            2. Inserir Produto
+            3. Inserir Pedido
+            4. Vizualizar Clientes
+            5. Vizualizar Produtos
+            6. Vizualizar Pedidos
             0. Sair
         
         ''')   
@@ -20,23 +23,31 @@ while True:
         match op:
 
             case "1":
-                inserirNovoCliente()
+                inserirCliente()
             
             case "2":
-                inserirNovoProduto()
+                inserirProduto()
 
             case "3":
-                inserirNovoPedido()
+                inserirPedido()
+
+            case "4":
+                visualizarClientes()
+
+            case "5":
+                visualizarProdutos()
+
+            case "6":
+                visualizarPedidos()
 
             case "0":
                 print("Saindo...")
                 break
             
             case _:
-                print("Opção inválida!")
+                print("Digite uma opção válida.")
 
         input("Digite Enter para continuar.")
 
     except(Exception, psycopg2.Error) as error:
         print(error)
-        s

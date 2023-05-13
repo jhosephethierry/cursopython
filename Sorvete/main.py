@@ -8,9 +8,9 @@ while True:
         
         Escolha uma opção no menu abaixo.
 
-            1. Cadastrar Cliente
-            2. Cadastrar Produto
-            3. Cadastrar Compra
+            1. Inserir Novo Cliente
+            2. Inserir Novo Produto
+            3. Inserir Novo Pedido
             0. Sair
         
         ''')   
@@ -21,13 +21,17 @@ while True:
 
             case "1":
                 inserirNovoCliente()
+            
             case "2":
                 inserirNovoProduto()
+
             case "3":
                 inserirNovoPedido()
+
             case "0":
                 print("Saindo...")
                 break
+            
             case _:
                 print("Opção inválida!")
 

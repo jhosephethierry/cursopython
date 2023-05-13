@@ -1,4 +1,4 @@
-from Controle.classConexao import Conexao
+from classConexao import Conexao
 import psycopg2
 
 conexaoBanco = Conexao("Sorvete", "localhost", "5432", "postgres", "postgres")

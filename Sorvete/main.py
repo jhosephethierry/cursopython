@@ -1,4 +1,4 @@
-import Modelo.Funcoes as Func
+import Funcoes as Func
 import psycopg2
 
 while True:

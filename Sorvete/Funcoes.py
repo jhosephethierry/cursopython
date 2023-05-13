@@ -1,8 +1,8 @@
-from Controle.classConexao import Conexao
+from classConexao import Conexao
 
-from Modelo.classCliente import Cliente
-from Modelo.classProduto import Produto
-from Modelo.classPedido import Pedido
+from classCliente import Cliente
+from classProduto import Produto
+from classPedido import Pedido
 
 import psycopg2
 

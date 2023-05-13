@@ -7,6 +7,23 @@ from Modelo.classPedido import Pedido
 import psycopg2
 
 
+def visualizarClientes():
+
+    pass
+
+
+
+def visualizarProdutos():
+
+    pass
+
+
+
+def visualizarPedidos():
+    
+    pass
+
+
 
 def inserirCliente():
 

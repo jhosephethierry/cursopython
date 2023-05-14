@@ -1,3 +1,4 @@
+from classConexao import Conexao
 
 class Cliente:
 
@@ -6,7 +7,11 @@ class Cliente:
         self._id = id
         self._nome = nome
 
-    def sqlInserirCliente(self):
+    def inserirCliente(self):
+
+        print("Cadastro de Cliente")
+
+        self._nome = input("Digite o nome do cliente. ")
 
         sql = f'''
         
@@ -15,6 +20,11 @@ class Cliente:
 
         '''
 
-        return sql
-    
+        if Conexao.manipularBanco(sql):
+
+            print(f"Novo cliente inserido com sucesso!")
+
+        else:
+
+            print("Ocorreu um erro ao inserir o cliente!")
     

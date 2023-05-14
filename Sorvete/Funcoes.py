@@ -1,4 +1,3 @@
-from classConexao import Conexao
 from classCliente import Cliente
 from classProduto import Produto
 from classPedido import Pedido
@@ -6,9 +5,33 @@ from classPedido import Pedido
 import psycopg2
 
 
+def consultarBanco(sql):
+
+    conn = psycopg2.connect(dbname = "Sorvete", host = "localhost", port = "5432", user = "postgres", password = "postgres")
+
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    resultado = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    return resultado
+    
+def manipularBanco(sql):
+        
+    conn = psycopg2.connect(dbname = "Sorvete", host = "localhost", port = "5432", user = "postgres", password = "postgres")
+    cursor = conn.cursor()
+
+    cursor.execute(sql)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+
+
 def visualizarClientes():
 
-    clientes = Conexao.consultarBanco('''
+    clientes = consultarBanco('''
 
     SELECT * FROM "Clientes"
     ORDER BY "ID" ASC
@@ -30,7 +53,7 @@ def visualizarClientes():
 
 def visualizarProdutos():
 
-    produtos = Conexao.consultarBanco('''
+    produtos = consultarBanco('''
 
     SELECT * FROM "Produtos"
     ORDER BY "ID" ASC
@@ -52,7 +75,7 @@ def visualizarProdutos():
 
 def visualizarPedidos():
 
-    pedidos = Conexao.consultarBanco('''
+    pedidos = consultarBanco('''
 
     SELECT * FROM "Pedidos"
     ORDER BY "ID" ASC
@@ -78,7 +101,7 @@ def inserirCliente():
 
     cliente = Cliente(None, input("Digite o nome do cliente. "))
 
-    Conexao.manipularBanco(Cliente.sqlInserirCliente(cliente))
+    manipularBanco(Cliente.sqlInserirCliente(cliente))
 
     print("Novo cliente inserido com sucesso!")
 
@@ -90,7 +113,7 @@ def inserirProduto():
 
     produto = Produto(None, input("Digite o nome do produto. "), input("Digite o peso. "), input("Digite o preço. "), input("Digite o estoque. "))
 
-    Conexao.manipularBanco(produto.sqlInserirProduto())
+    manipularBanco(produto.sqlInserirProduto())
 
     print("Novo produto inserido com sucesso!")
 

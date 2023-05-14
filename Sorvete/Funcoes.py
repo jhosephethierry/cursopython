@@ -78,11 +78,11 @@ def inserirCliente():
 
     cliente = Cliente(None, input("Digite o nome do cliente. "))
 
-    Conexao.manipularBanco(cliente.sqlInserirCliente())
+    Conexao.manipularBanco(Cliente.sqlInserirCliente(cliente))
 
     print("Novo cliente inserido com sucesso!")
 
-
+    
 
 def inserirProduto():
 

@@ -1,4 +1,6 @@
-import Funcoes as Func
+import Funcoes as fx
+from classCliente import Cliente
+
 import psycopg2
 
 while True:
@@ -23,10 +25,10 @@ while True:
         match op:
 
             case "1":
-                Func.inserirCliente()
+                fx.inserirCliente()
             
             case "2":
-                Func.inserirProduto()
+                fx.inserirProduto()
 
             case "3":
                 Func.inserirPedido()

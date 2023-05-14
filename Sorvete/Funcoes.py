@@ -31,10 +31,11 @@ def manipularBanco(sql):
 
 def visualizarClientes():
 
+
     clientes = consultarBanco('''
 
     SELECT * FROM "Clientes"
-    ORDER BY "ID" ASC
+    ORDER BY "Id" ASC
 
     ''')
 
@@ -56,7 +57,7 @@ def visualizarProdutos():
     produtos = consultarBanco('''
 
     SELECT * FROM "Produtos"
-    ORDER BY "ID" ASC
+    ORDER BY "Id" ASC
 
     ''')
 
@@ -78,7 +79,7 @@ def visualizarPedidos():
     pedidos = consultarBanco('''
 
     SELECT * FROM "Pedidos"
-    ORDER BY "ID" ASC
+    ORDER BY "Id" ASC
 
     ''')
 

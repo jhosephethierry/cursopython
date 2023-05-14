@@ -42,15 +42,16 @@ def visualizarClientes():
     if clientes:
 
         print("Estes são os clientes cadastrados.")
+        print("")
 
         for cliente in clientes:
-            print(f"{cliente[0]} | {cliente[1]}")
+            print(f"{cliente[0]} | Nome - {cliente[1]}")
 
     else:
         
         print("Não há clientes cadastrados.")
 
-
+    print("")
 
 def visualizarProdutos():
 
@@ -64,15 +65,16 @@ def visualizarProdutos():
     if produtos:
 
         print("Estes são os produtos cadastrados.")
+        print("")
 
         for produto in produtos:
-            print(f"{produto[0]} | {produto[1]} | {produto[2]} | {produto[3]} | {produto[4]}")
-
+            print(f"{produto[0]} | Sabor - {produto[1]} | Peso - {produto[2]} | Preço - R$ {produto[3]} | Quantidade - {produto[4]}")
+    
     else:
         
         print("Não há produtos cadastrados.")
 
-
+    print("")
 
 def visualizarPedidos():
 
@@ -86,6 +88,7 @@ def visualizarPedidos():
     if pedidos:
 
         print("Estes são os pedidos cadastrados.")
+        print("")
 
         for pedido in pedidos:
             print(f"{pedido[0]} | {pedido[1]} | {pedido[2]} | {pedido[3]} | {pedido[4]} | {pedido[5]}")
@@ -105,8 +108,37 @@ def inserirCliente():
     manipularBanco(Cliente.sqlInserirCliente(cliente))
 
     print("Novo cliente inserido com sucesso!")
+    print("")
 
+
+    op = input("Quer continuar inserindo clientes? s ou n? ")
     
+    match op:
+
+        case "s":
+            inserirCliente()
+        case "n":
+            print("Saindo!")
+            print("")
+        case _:
+            print("Digite uma opção válida.")
+            print("")   
+        
+    
+    op = input("Quer visualizar seus clientes? s ou n? ")
+    
+    match op:
+
+        case "s":
+            visualizarClientes()
+        case "n":
+            print("Saindo!")
+            print("") 
+        case _:
+            print("Digite uma opção válida.")
+            print("")
+    
+
 
 def inserirProduto():
 
@@ -117,6 +149,34 @@ def inserirProduto():
     manipularBanco(produto.sqlInserirProduto())
 
     print("Novo produto inserido com sucesso!")
+
+
+    op = input("Quer continuar inserindo produtos? s ou n? ")
+    
+    match op:
+
+        case "s":
+            inserirProduto()
+        case "n":
+            print("Saindo!")
+            print("")
+        case _:
+            print("Digite uma opção válida.")
+            print("")   
+        
+    
+    op = input("Quer visualizar seus produtos? s ou n? ")
+    
+    match op:
+
+        case "s":
+            visualizarProdutos()
+        case "n":
+            print("Saindo!")
+            print("") 
+        case _:
+            print("Digite uma opção válida.")
+            print("")
 
 
 

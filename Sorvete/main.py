@@ -19,6 +19,7 @@ while True:
         ''')   
 
         op = input("Digite uma das opções. ")
+        print("")
         
         match op:
 

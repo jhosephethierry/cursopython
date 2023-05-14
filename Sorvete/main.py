@@ -4,18 +4,13 @@ import psycopg2
 while True:
 
     try:
-        print('''Sorvetes Sorriso
+        print('''
         
-        Escolha uma opção no menu abaixo.
+    Sorvetes Sorriso
 
-            1. Inserir Cliente
-            2. Inserir Produto
-            3. Inserir Pedido
-            4. Vizualizar Clientes
-            5. Vizualizar Produtos
-            6. Vizualizar Pedidos
-            0. Sair
-        
+    Escolha uma opção no menu abaixo.
+    1. Inserir Cliente | 2. Inserir Produto | 3. Inserir Pedido | 4. Visualizar Clientes | 5. Visualizar Produtos | 6. Visualizar Pedidos | 0. Sair
+
         ''')   
 
         op = input("Digite uma das opções. ")

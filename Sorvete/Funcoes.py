@@ -144,7 +144,7 @@ def inserirProduto():
 
     print("Cadastro de Produto")
 
-    produto = Produto(None, input("Digite o nome do produto. "), input("Digite o peso. "), input("Digite o preço. "), input("Digite o estoque. "))
+    produto = Produto(None, input("Digite o nome do produto. "), input("Digite o peso. "), input("Digite o preço. R$ "), input("Digite o estoque. "))
 
     manipularBanco(produto.sqlInserirProduto())
 

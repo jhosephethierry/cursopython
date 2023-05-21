@@ -21,7 +21,7 @@ class App(CTk):
         self.inputCep = CTkEntry(self,placeholder_text="Digite seu CEP")
         self.inputCep.grid(column=1, row=1, padx=20, pady=20)
 
-        self.consultaCep = CTkButton(self, text="Consultar", command=self.consultarCep)
+        self.consultaCep = CTkButton(self, text="Consultar", fg_color= "red", corner_radius= 8, command=self.consultarCep)
         self.consultaCep.grid(column=2, row=1, padx=20, pady=20)
 
         self.rotuloLogradouro = CTkLabel(self, text="Logradouro: ")

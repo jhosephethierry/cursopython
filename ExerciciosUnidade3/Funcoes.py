@@ -53,13 +53,12 @@ def verPomar():
         ''')   
 
         for fruta in pomar:
-            print(f"    [ {fruta[0]} ]     | {fruta[1]}    | {fruta[2]}g    | {fruta[3]} un    |{fruta[4]}")
+            print(f"    [ {fruta[0]} ]     |    {fruta[1]}    |    {fruta[2]}g    |   {fruta[3]} un    |    {fruta[4]}")
+            print("")
         
         print("")
 
         breakpoint
-
-        input("Enter para continuar. ")
 
     else:
         
@@ -68,13 +67,12 @@ def verPomar():
         breakpoint
 
     print("")
-
+    input("")
 
 
 def inserirFruta():
 
-
-    
+ 
     nomeFruta = input("Digite o nome da fruta. ")
     pesoFruta = input("Digite o peso. ")
     quantidadeColhida = input("Digite a quantidade colhida. ")
@@ -103,6 +101,60 @@ def inserirFruta():
 
     
     op = input("Quer visualizar seu Pomar? s ou n? ")
+    
+    match op:
+
+        case "s":
+            verPomar()
+        case "n":
+            print("Saindo!")
+            print("")
+            breakpoint
+        case _:
+            print("Digite uma opção válida.")
+            print("")
+
+    breakpoint
+
+
+
+def atualizarPomar():
+
+    verPomar()
+
+    id = input("Digite o id da fruta que deseja atualizar: ")
+    fruta = input("Digite o nome do fruta. ")
+    peso = input("Digite o peso do fruta. ")
+    estoque = input("Digite o estoque do fruta. ")
+
+    manipularBanco(f'''
+    
+    UPDATE "Pomar"
+    SET
+        "Fruta" = '{fruta}',
+        "Peso" = '{peso}',     
+        "Estoque" = '{estoque}'  
+    WHERE
+        "Id" = '{id}'      
+    
+    ''')
+    print("fruta atualizada com sucesso!")
+
+    op = input("Quer continuar atualizando seu pomar? s/n? ")
+    
+    match op:
+
+        case "s":
+            atualizarPomar()
+        case "n":
+            print("Saindo!")
+            breakpoint
+        case _:
+            print("Digite uma opção válida.")
+            print("")   
+
+    
+    op = input("Quer visualizar seu pomar? s ou n? ")
     
     match op:
 

@@ -20,3 +20,29 @@ class Pomar:
         '''
 
         return sql
+    
+    def sqlEscolherFruta(self):
+
+        sql = f'''
+        
+        UPDATE "Pomar"
+        SET
+        "Fruta" = '{self._fruta}'
+        WHERE "Id" = '{self._id}'
+
+        '''
+
+        return sql
+    
+    def sqlAtualizarEstoque(self):
+
+        sql = f'''
+        
+        UPDATE "Pomar"
+        SET
+        "Estoque" = '{self._estoque}'
+        WHERE "Id" = '{self._id}'
+
+        '''
+
+        return sql

@@ -73,11 +73,17 @@ def verPomar():
 
 def inserirFruta():
 
-    print("Inserir Frutas")
 
-    fruta = Pomar(None, input("Digite o nome da fruta. "), input("Digite o peso. "), float(input("Digite a quantidade colhida. ")), None)
+    
+    nomeFruta = input("Digite o nome da fruta. ")
+    pesoFruta = input("Digite o peso. ")
+    quantidadeColhida = input("Digite a quantidade colhida. ")
+
+    fruta = Pomar(None, (nomeFruta), float(pesoFruta), int(quantidadeColhida), )
 
     manipularBanco(fruta.sqlInserirFruta())
+
+    #print(f"Compra de {pedido._quantidade} de {produto._nome} de {produto._sabor} por R$ {pedido._valorTotal} foi cadastrada com sucesso!")
 
     print("Nova inserida com sucesso!")
 

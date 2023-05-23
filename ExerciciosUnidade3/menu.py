@@ -1,4 +1,4 @@
-import Funcoes as Func
+import funcoes as func
 import psycopg2
 
 while True:
@@ -28,11 +28,11 @@ while True:
         match op:
 
             case "1": 
-                Func.inserirFruta()
+                func.inserirFruta()
             case "2":
-                Func.verPomar()
+                func.verPomar()
             case "3":
-                Func.atualizarPomar()
+                func.atualizarPomar()
             case "4":
                 print("Voltando ao menu principal...")
                 break

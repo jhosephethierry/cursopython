@@ -53,7 +53,7 @@ def verPomar():
         ''')   
 
         for fruta in pomar:
-            print(f" [ {fruta[0]} ] | {fruta[1]}    | {fruta[2]}    | {fruta[3]}    |{fruta[4]}")
+            print(f"    [ {fruta[0]} ]     | {fruta[1]}    | {fruta[2]}g    | {fruta[3]} un    |{fruta[4]}")
         
         print("")
 
@@ -79,7 +79,7 @@ def inserirFruta():
     pesoFruta = input("Digite o peso. ")
     quantidadeColhida = input("Digite a quantidade colhida. ")
 
-    fruta = Pomar(None, (nomeFruta), float(pesoFruta), int(quantidadeColhida), )
+    fruta = Pomar(None, (nomeFruta), (pesoFruta), int(quantidadeColhida))
 
     manipularBanco(fruta.sqlInserirFruta())
 

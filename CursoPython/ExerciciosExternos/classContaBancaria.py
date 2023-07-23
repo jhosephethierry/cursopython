@@ -1,8 +1,8 @@
 class ContaBancaria:
 
     def __init__(self,titular,saldo):
-        self.titular= titular   
-        self.saldo= saldo
+        self.titular = titular   
+        self.saldo = saldo
     
     def depositar (self):
         valordeposito = float(input('Digite o valor:'))
